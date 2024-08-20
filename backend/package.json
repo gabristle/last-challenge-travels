@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "./src/server.ts",
+  "scripts": {
+    "start:dev": "nodemon ./src/server.ts",
+    "start": "node ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.4",
+    "tsx": "^4.17.0"
+  }
+}
