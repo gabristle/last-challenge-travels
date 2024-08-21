@@ -1,11 +1,13 @@
 :root {
     --blue: #051036;
-    --light-font: #5F6680;
     --pink: #FC5056;
     --dark-pink: #E84E53;
-    --white: #FFFFFF;
+    --body: rgb(5, 16, 34, 0.8);
+    --subdued: rgb(5, 16, 34, 0.6);
+    --hints: rgb(5, 16, 34, 0.4);
     --ligth-gray: #F7F8FA;
     --gray: #E0E1E6;
     --dark-gray: #C7CAD1;
+    --white: #FFFFFF;
     --black: #111111;
 }
