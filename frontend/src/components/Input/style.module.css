@@ -1,0 +1,31 @@
+.inputContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0.7rem 0rem 0.7rem 30px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    color: var(--blue);
+    border: 1px solid var(--hints);
+}
+
+.input::placeholder {
+    color: var(--hints);
+    text-transform: capitalize;
+}
+
+.inputIcon {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 5px;
+    opacity: 0.4;
+}
