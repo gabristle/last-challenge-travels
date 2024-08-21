@@ -1,0 +1,104 @@
+.cardContainer {
+    width: 270px;
+    background-color: var(--ligth-gray);
+    color: var(--blue)
+}
+
+.imageContainer {
+    width: 100%;
+    height: 220px;
+    position: relative;
+}
+
+.heartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    top: 1rem;
+    right: 15px;
+}
+
+.heartContainer:hover {
+    background-color: var(--gray);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.heartIcon {
+    height: 16px;
+    width: 16px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1rem;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gradeRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.durationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.clockIcon {
+    width: 15px;
+    height: 15px;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--gray);
+}
+
+.tourName {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue);
+    font-family: 'Work Sans', sans-serif;
+}
+
+small {
+    font-size: 12px;
+}
+
+.cost {
+    font-family: 'Kaushan Script';
+    font-size: 20px;
+    color: var(--blue);
+}
+
+.costContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

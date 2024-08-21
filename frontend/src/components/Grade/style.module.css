@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--pink);
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 40px;
+    height: 26px;
+    border-radius: 4px;
+}
+
+.icon {
+    width: 10px;
+    height: 10px;
+}
+
+.grade {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Inter';
+}
+
+.container:hover{
+    background-color: var(--dark-pink);
+}
