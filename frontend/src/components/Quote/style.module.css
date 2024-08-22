@@ -1,0 +1,26 @@
+.quoteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-wrap: wrap;
+    gap: 1.5rem;
+    width: 50%;
+    text-align: center;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+q {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--body);
+}
