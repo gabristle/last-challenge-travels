@@ -1,0 +1,35 @@
+.typeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 0rem 1.5rem 1rem;
+    border: 1px solid var(--gray);
+    color: var(--blue);
+    width: calc(172px - 1.5rem);
+}
+
+img {
+    height: 44px;
+    width: 44px;
+    margin-bottom: 0.8rem;
+}
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem; 
+}
+
+.cost {
+    margin-top: 1.5rem;
+}
+
+span {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 20px;
+}
