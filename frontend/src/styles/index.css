@@ -10,4 +10,5 @@
 body {
     font-family: "Inter", sans-serif;
     color: var(--blue);
+    background-color: white;
 }
