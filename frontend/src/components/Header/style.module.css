@@ -1,0 +1,77 @@
+.topHeader {
+    display: flex;
+    color: var(--body);
+    background-color: var(--ligth-gray);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+    height: 36px;
+    font-size: 12px;
+    
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.socialIcon {
+    width: 14px;
+    height: 14px;
+}
+
+.bottom {
+    width: 8px;
+    height: 8px;
+}
+
+.bottomHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0rem 3rem;
+}
+
+.logo {
+    height: 32px;
+    width: 108px;
+}
+
+.navigationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 680px;
+}
+
+nav {
+    width: 510px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+a li:hover {
+    color: var(--pink);
+}
