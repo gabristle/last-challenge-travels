@@ -1,0 +1,38 @@
+.postContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 138px;
+    width: 440px;
+    gap: 1.2rem;
+}
+
+img {
+    height: 138px;
+    width: 170px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--body);
+    gap: 1.5rem;
+}
+
+.span {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.postInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
