@@ -1,0 +1,32 @@
+.sortContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--subdued);
+    font-size: 14px;
+}
+
+.sortRow {
+    display: flex;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sortIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.sortSelect {
+    width: 170px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0rem 0.5rem;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    color: var(--subdued);
+    border: 1px solid var(--gray);
+}
