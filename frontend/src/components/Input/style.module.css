@@ -14,7 +14,7 @@
     width: 100%;
     border-radius: 5px;
     color: var(--blue);
-    border: 1px solid var(--hints);
+    border: 1px solid var(--gray);
 }
 
 .input::placeholder {
