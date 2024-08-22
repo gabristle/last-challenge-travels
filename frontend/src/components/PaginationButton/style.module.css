@@ -1,0 +1,21 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gray);
+    width: 48px;
+    height: 48px;
+    color: var(--subdued);
+    font-weight: 600;
+    border-radius: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.buttonContainer:hover,
+.buttonContainer:focus {
+    background-color: var(--pink);
+    color: var(--white);
+    border-color: transparent;
+}
