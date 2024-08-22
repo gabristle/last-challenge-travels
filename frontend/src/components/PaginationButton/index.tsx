@@ -1,13 +1,14 @@
+import { ReactNode } from 'react'
 import styles from './style.module.css'
 
 interface PaginationButtonProps {
-    char: string | number
+    children: ReactNode
 }
 
-function PaginationButton({ char }: PaginationButtonProps) {
+function PaginationButton({ children }: PaginationButtonProps) {
   return (
-    <button className={styles.buttonContainer}>
-        <p>{char}</p>
+    <button className={styles.button}>
+        {children}
     </button>
   )
 }
