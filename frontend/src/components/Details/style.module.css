@@ -1,0 +1,91 @@
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 770px;
+    gap: 1rem;
+}
+
+.detailsContainer p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.detailsContainer h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.actionsRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 20px;
+    height: 22px;
+}
+
+.localization {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.localization a {
+    color: var(--pink);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.localizationRow {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.reviewRow {
+    display: flex;
+    align-items: center;
+}
+
+.starIcon {
+    width: 14px;
+    height: 14px;
+    margin-right: 0.1rem;
+}
+
+.detailContainer p:nth-child(2){
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+.detailContainer span{
+    font-size: 14px;
+    font-family: 'Inter' sans-serif;
+    font-weight: 400;
+}
