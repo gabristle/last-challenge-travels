@@ -1,0 +1,41 @@
+.destinationContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: white;
+}
+
+.destinationImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.gradient {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( transparent 70%, black 85%);
+    opacity: 0.8;
+    position: absolute;
+    z-index: 998;
+}
+
+.destinationInfos {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.2rem;
+    z-index: 999;
+    gap: 0.6rem;
+}
+
+.travelers {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.destination {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 20px;
+}
