@@ -1,0 +1,49 @@
+.reviewCard {
+    display: flex;
+    gap: 1.2rem;
+    text-wrap: wrap;
+    padding: 2rem 2rem;
+    width: 770px;
+    border: 1px solid var(--gray);
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 32px;
+}
+
+.reviewInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-wrap: wrap;
+}
+
+.date {
+    font-size: 12px;
+}
+
+.author {
+    font-size: 18px;
+    font-family: 'Work Sans';
+    font-weight: 700;
+}
+
+.reviewRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+}
+
+.comment {
+    font-size: 1rem;
+}
