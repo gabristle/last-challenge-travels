@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hello {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.container img,
+.image
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.logOut {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--body);
+    background-color: var(--white);
+    border-radius: 6px;
+    border: solid 1px var(--gray);
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.logOut:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
