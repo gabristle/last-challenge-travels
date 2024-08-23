@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--body);
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+
+.container:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    margin-top: 4px;
+    margin-right: 0.2rem;
+    width: 20px;
+    height: 20px;
+}
