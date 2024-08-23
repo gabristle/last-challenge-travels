@@ -1,0 +1,51 @@
+.averageReviewsContainer {
+    width: 760px;
+    padding: 2rem;
+    background-color: var(--ligth-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+.averageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: var(--pink);
+    width: 180px;
+    color: var(--white);
+}
+
+.average {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 54px;
+    font-weight: 600;
+}
+
+.averageRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.starIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.averageDescription {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.criterionsRow {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem 0rem;
+}
+
+.criterions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
