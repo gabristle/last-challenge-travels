@@ -1,8 +1,13 @@
-import React from 'react'
+import Header from '../../components/Header'
+import HelloLogout from '../../components/HelloLogout'
 
 function Tour() {
   return (
-    <div>Tour</div>
+    <>
+      <Header>
+          <HelloLogout name={'Gabriella'}/>
+      </Header>
+    </>
   )
 }
 

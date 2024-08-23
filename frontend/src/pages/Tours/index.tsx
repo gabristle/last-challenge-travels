@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../../components/Header'
+import HelloLogout from '../../components/HelloLogout'
 
 function Tours() {
   return (
-    <div>Tours</div>
+    <>
+      <Header>
+          <HelloLogout name={''}/>
+      </Header>
+    </>
   )
 }
 

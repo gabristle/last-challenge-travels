@@ -13,7 +13,7 @@ function HelloLogout({ image, name }: HelloLogoutProps) {
             {!image && <div className={styles.image}>{name.slice(0, 2)}</div>}
             <p>Hello, {name}!</p>
         </div>
-        <button className={styles.logOut}>Log Out</button>
+        <button className={styles.logOutButton}>Log Out</button>
     </div>
   )
 }
