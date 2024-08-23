@@ -21,10 +21,10 @@ function Header({ children }:HeaderProps) {
                 <p>info@trisog.com</p>
             </div>
             <div className={styles.social}>
-                <a href="https://x.com/"><img src={twitterIcon} alt="twitter icon" className={styles.socialIcon}/></a>
-                <a href="https://www.linkedin.com/"><img src={linkedinIcon} alt="linkedin icon" className={styles.socialIcon}/></a>
-                <a href="https://www.google.com/"><img src={googleIcon} alt="google icon" className={styles.socialIcon}/></a>
-                <a href="https://br.pinterest.com/"><img src={pinterestIcon} alt="pinterest icon" className={styles.socialIcon}/></a>
+                <a href="https://x.com/" target='_blank'><img src={twitterIcon} alt="twitter icon" className={styles.socialIcon}/></a>
+                <a href="https://www.linkedin.com/" target='_blank'><img src={linkedinIcon} alt="linkedin icon" className={styles.socialIcon}/></a>
+                <a href="https://www.google.com/" target='_blank'><img src={googleIcon} alt="google icon" className={styles.socialIcon}/></a>
+                <a href="https://br.pinterest.com/" target='_blank'><img src={pinterestIcon} alt="pinterest icon" className={styles.socialIcon}/></a>
                 <p>|</p>
                 <p>EUR</p>
                 <img src={bottomIcon} alt="arrow to bottom" className={styles.bottom}/>

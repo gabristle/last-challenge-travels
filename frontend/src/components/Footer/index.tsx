@@ -25,9 +25,9 @@ function Footer() {
                 <p>exaample@trisog.com</p>
             </div>
             <div className={styles.contactSocial}>
-                <a href="https://www.facebook.com/"><img src={facebook} alt="facebook icon" className={styles.socialIcon}/></a>
-                <a href="https://x.com/"><img src={twitter} alt="twitter icon" className={styles.socialIcon}/></a>
-                <a href="https://www.linkedin.com/"><img src={linkedin} alt="linkedin icon" className={styles.socialIcon}/></a>
+                <a href="https://www.facebook.com/" target='_blank'><img src={facebook} alt="facebook icon" className={styles.socialIcon}/></a>
+                <a href="https://x.com/" target='_blank'><img src={twitter} alt="twitter icon" className={styles.socialIcon}/></a>
+                <a href="https://www.linkedin.com/" target='_blank'><img src={linkedin} alt="linkedin icon" className={styles.socialIcon}/></a>
             </div>
         </section>
         <section className={styles.linksSection}>
