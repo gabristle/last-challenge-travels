@@ -8,11 +8,11 @@ import Error from '../pages/Error'
 function Router() {
   return (
     <Routes>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/' element={<Home />}/>
-        <Route path='/tours' element={<Tours />}/>
-        <Route path='/tour' element={<Tour />}/>
-        <Route path='*' element={<Error />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/" element={<Home />}/>
+        <Route path="/tours" element={<Tours />}/>
+        <Route path="/tour" element={<Tour />}/>
+        <Route path="*" element={<Error />}/>
     </Routes>
   )
 }

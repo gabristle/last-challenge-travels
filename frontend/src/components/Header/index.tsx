@@ -13,7 +13,7 @@ interface HeaderProps {
 
 function Header({ children }:HeaderProps) {
   return (
-    <div className={styles.headerContainer}>
+    <header className={styles.headerContainer}>
         <div className={styles.topHeader}>
             <div className={styles.contact}>
                 <p>(000)999-898-999</p>
@@ -61,7 +61,7 @@ function Header({ children }:HeaderProps) {
             </div>
             {children}
         </div>
-    </div>
+    </header>
   )
 }
 

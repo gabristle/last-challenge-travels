@@ -28,9 +28,8 @@
     font-size: 12px;
 }
 
-.logOut {
+.logOutButton {
     background-color: transparent;
-    display: flex;
     align-items: center;
     font-family: 'Work Sans', sans-serif;
     font-size: 14px;
@@ -40,7 +39,9 @@
     border-radius: 6px;
     border: solid 1px var(--gray);
     padding: 5px 5px;
+    height: auto;
     cursor: pointer;
+    margin: auto;
 }
 
 .logOut:hover {
