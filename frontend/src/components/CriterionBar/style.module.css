@@ -1,0 +1,28 @@
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.bar {
+    width: 200px;
+    height: 10px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+
+}
+
+.valueBar {
+    height: 10px;
+    background-color: var(--pink);
+    border-radius: 15px;
+}
+
+.criterion,
+.value {
+    font-size: 14px;
+}
+
+.criterion {
+    margin-bottom: 0.5rem;
+}
