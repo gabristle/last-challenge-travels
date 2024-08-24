@@ -4,10 +4,17 @@ import Input from '../../components/Input'
 import styles from './style.module.css'
 import googleIcon from '../../assets/google.png'
 import facebookIcon from '../../assets/facebook.png'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+  const navigate = useNavigate()
+
   function handleChange(){
 
+  }
+
+  function handleBack() {
+    navigate('/')
   }
 
   return (
@@ -20,7 +27,7 @@ function Login() {
         </div>
       </section>
       <section className={styles.loginSection}>
-        <button className={styles.backButton}>Back to home</button>
+        <button className={styles.backButton} onClick={handleBack}>Back to home</button>
         <div className={styles.login}>
           <img src={logo} alt="trisog logo" className={styles.logo}/>
           <h1 className={styles.title}>Sign in or Create account</h1>

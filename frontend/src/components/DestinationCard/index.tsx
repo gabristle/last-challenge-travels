@@ -4,11 +4,12 @@ interface DestinationCardProps {
     image: string
     travelers: number
     destination: string
+    id?: string
 }
 
-function DestinationCard({ image, travelers, destination }: DestinationCardProps) {
+function DestinationCard({ image, travelers, destination, id }: DestinationCardProps) {
   return (
-    <div className={styles.destinationContainer}>
+    <div className={styles.destinationContainer} id={id}>
         <div className={styles.gradient}>
         </div>
         <img src={image} alt={`${destination} photo`} className={styles.destinationImg}/>

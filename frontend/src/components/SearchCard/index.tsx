@@ -6,13 +6,17 @@ import people from '../../assets/people.png'
 import flag from '../../assets/flag.png'
 import Button from '../Button'
 
-function SearchCard() {
+interface SearchCardProps {
+    className: string
+}
+
+function SearchCard({ className }: SearchCardProps) {
     function handleChange() {
 
     }
 
   return (
-    <div className={styles.searchCardContainer}>
+    <div className={`${styles.searchCardContainer} ${className}`}>
         <div className={styles.inputContainer}>
             <label className={styles.label}>Destination</label>
             <Input icon={paperPlane} placeholder={'Where to go?'} onChange={handleChange}></Input>
@@ -32,7 +36,7 @@ function SearchCard() {
             <label className={styles.label}>Guests</label>
             <Input icon={people} type={'number'} placeholder={'0'} onChange={handleChange} pattern={'^([0-9]|1[0-9]|2[0-5])$'}></Input>
         </div>
-        <Button>Search</Button>
+        <Button className={styles.searchButton}>Search</Button>
     </div>
   )
 }
