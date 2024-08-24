@@ -7,6 +7,8 @@ import SectionHeader from "../../components/SectionHeader"
 import TourCard from "../../components/TourCard"
 import Statistic from "../../components/Statistic"
 import DestinationCard from "../../components/DestinationCard"
+import watchNow from "../../assets/watchNow.png"
+import checkIcon from '../../assets/check.png'
 
 function Home() {
   return (
@@ -52,6 +54,38 @@ function Home() {
             <div className={styles.destination}>
               <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
             </div>
+          </div>
+        </section>
+        <section className={`${styles.chooseUs} ${styles.section}`}>
+          <div>
+            <img src={watchNow} alt="landscapes photos" className={styles.watchNow}/>
+          </div>
+          <div className={styles.chooseUsContent}>
+            <SectionHeader title={'Why Choose Us'} subtitle={'Our Experiences Meet High Quality Standards'} className={styles.chooseUsHeader}></SectionHeader>
+            <p className={styles.chooseUsText}>Holisticly optimize proactive strategic theme areas rather than effective manufactured products create.</p>
+            <div className={styles.checksRow}>
+              <div>
+                <div className={styles.checks}>
+                  <img src={checkIcon} alt="check icon" />
+                  <p>Travel Plan</p>
+                </div>
+                <div className={styles.checks}>
+                  <img src={checkIcon} alt="check icon" />
+                  <p>Hand-picked Tour</p>
+                </div>
+              </div>
+              <div>
+                <div className={styles.checks}>
+                  <img src={checkIcon} alt="check icon" />
+                  <p>Cheap Rates</p>
+                </div>
+                <div className={styles.checks}>
+                  <img src={checkIcon} alt="check icon" />
+                  <p>Private Guide</p>
+                </div>
+              </div>
+            </div>
+            <button className={styles.contactUsButton}>Contact Us</button>
           </div>
         </section>
       </main>
