@@ -1,0 +1,15 @@
+.mainImg {
+    width: 100%;
+}
+
+.searchCard {
+    position: absolute;
+    z-index: 999;
+    top: 620px;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

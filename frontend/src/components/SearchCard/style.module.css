@@ -49,7 +49,7 @@
     font-size: 14px;
 }
 
-Button {
+.searchButton {
     height: 40px;
     width: 105px !important;
     margin-top: 1.1rem;
