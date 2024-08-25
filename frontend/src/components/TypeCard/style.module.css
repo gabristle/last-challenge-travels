@@ -7,28 +7,29 @@
     width: calc(172px - 1.5rem);
 }
 
-img {
+.typeContainer img {
     height: 44px;
     width: 44px;
     margin-bottom: 0.8rem;
 }
 
-h2 {
+.typeContainer h2 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 0.5rem;
 }
 
-p {
-    font-size: 1rem; 
+.typeContainer p {
+    font-size: 1rem;
 }
 
 .cost {
     margin-top: 1.5rem;
 }
 
-span {
+.typeContainer span {
     font-family: 'Kaushan Script', sans-serif;
     font-size: 20px;
+    color: var(--pink);
 }

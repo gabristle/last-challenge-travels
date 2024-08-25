@@ -9,6 +9,11 @@ import Statistic from "../../components/Statistic"
 import DestinationCard from "../../components/DestinationCard"
 import watchNow from "../../assets/watchNow.png"
 import checkIcon from '../../assets/check.png'
+import Footer from "../../components/Footer"
+import TypeCard from "../../components/TypeCard"
+import Quote from "../../components/Quote"
+import testimonial from "../../assets/testimonials.png"
+import PostCard from "../../components/PostCard"
 
 function Home() {
   return (
@@ -88,6 +93,42 @@ function Home() {
             <button className={styles.contactUsButton}>Contact Us</button>
           </div>
         </section>
+        <div className={styles.line}></div>
+        <section className={`${styles.type} ${styles.section}`}>
+          <SectionHeader title={'Browse By Category'} subtitle={'Pick A Tour Type'} className={styles.typeHeader}></SectionHeader>
+          <div className={styles.typeCards}>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+          </div>
+        </section>
+        <section className={styles.testimonials}>
+          <img src={testimonial} alt="travelers photo" className={styles.testimonialsImage}/>
+          <div className={styles.testimonialsContent}>
+            <SectionHeader title={'Testimonials'} subtitle={'What Travelers Say'}></SectionHeader>
+            <Quote citation={'"The UI designs he crafted are top-notch, and the design system he integrated allows for straight forward fixes and bulk updates throughout almost every area of the app"'} author={'Molie Rosa'} occupation={'Photographer'}></Quote>
+          </div>
+        </section>
+        <section className={styles.updates}>
+          <SectionHeader title={'Updates'} subtitle={'Latest Travel Guide'} className={styles.updatesHeader}></SectionHeader>
+          <div className={styles.postRow}>
+            <div className={styles.postColumn}>
+              <PostCard image={mainImg}></PostCard>
+              <PostCard image={mainImg}></PostCard>
+            </div>
+            <div className={styles.postColumn}>
+              <PostCard image={mainImg}></PostCard>
+              <PostCard image={mainImg}></PostCard>
+            </div>
+          </div>
+        </section>
+        <section className={styles.travelIcons}>
+          
+        </section>
+        <Footer></Footer>
       </main>
     </>
   )
