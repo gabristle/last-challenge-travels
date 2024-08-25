@@ -5,6 +5,8 @@ import styles from './style.module.css'
 import googleIcon from '../../assets/google.png'
 import facebookIcon from '../../assets/facebook.png'
 import { useNavigate } from 'react-router-dom'
+import mailIcon from '../../assets/mail.png'
+import lockIcon from '../../assets/lock.png'
 
 function Login() {
   const navigate = useNavigate()
@@ -35,11 +37,11 @@ function Login() {
             <div className={styles.inputs}>
               <div className={styles.input}>
                 <label>Email</label>
-                <Input placeholder={'Enter your email'} onChange={handleChange}></Input>
+                <Input icon={mailIcon} placeholder={'Enter your email'} onChange={handleChange}></Input>
               </div>
               <div className={styles.input}>
                 <label>Password</label>
-                <Input type={'password'} placeholder={'Enter your password'} onChange={handleChange}></Input>
+                <Input icon={lockIcon} type={'password'} placeholder={'Enter your password'} onChange={handleChange}></Input>
               </div>
               <Button>Sign In</Button>
               <Button className={styles.signUpButton}>Sign Up</Button>

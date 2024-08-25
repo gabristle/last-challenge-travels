@@ -14,6 +14,11 @@ import TypeCard from "../../components/TypeCard"
 import Quote from "../../components/Quote"
 import testimonial from "../../assets/testimonials.png"
 import PostCard from "../../components/PostCard"
+import travelIcon1 from '../../assets/travelIcon1.png'
+import travelIcon2 from '../../assets/travelIcon2.png'
+import travelIcon3 from '../../assets/travelIcon3.png'
+import travelIcon4 from '../../assets/travelIcon4.png'
+import travelIcon5 from '../../assets/travelIcon5.png'
 
 function Home() {
   return (
@@ -126,7 +131,11 @@ function Home() {
           </div>
         </section>
         <section className={styles.travelIcons}>
-          
+          <img src={travelIcon1} alt="" className={styles.travelIcon1}/>
+          <img src={travelIcon2} alt="" className={styles.travelIcon2}/>
+          <img src={travelIcon3} alt="" className={styles.travelIcon3}/>
+          <img src={travelIcon4} alt="" className={styles.travelIcon4}/>
+          <img src={travelIcon5} alt="" className={styles.travelIcon5}/>
         </section>
         <Footer></Footer>
       </main>
