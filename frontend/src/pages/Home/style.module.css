@@ -205,5 +205,33 @@ main {
 }
 
 .travelIcons {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--ligth-gray);
+    padding: 50px 175px;
+}
+
+.travelIcon1 {
+    height: 70px;
+    width: 85px;
+}
+
+.travelIcon2 {
+    height: 50px;
+    width: 105px;
+}
+
+.travelIcon3 {
+    height: 55px;
+    width: 115px;
+}
+
+.travelIcon4 {
+    height: 68px;
+    width: 48px;
+}
+
+.travelIcon5 {
+    height: 55px;
+    width: 90px;
 }
