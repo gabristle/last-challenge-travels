@@ -118,11 +118,11 @@ p {
     gap: 0.5rem;
 }
 
-Button {
+.signUp Button {
     width: 110px !important;
 }
 
-Input {
+.signUp Input {
     width: 200px !important;
 }
 
