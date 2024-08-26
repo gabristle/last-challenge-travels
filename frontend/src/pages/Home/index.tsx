@@ -19,12 +19,16 @@ import travelIcon2 from '../../assets/travelIcon2.png'
 import travelIcon3 from '../../assets/travelIcon3.png'
 import travelIcon4 from '../../assets/travelIcon4.png'
 import travelIcon5 from '../../assets/travelIcon5.png'
+import { useAuth } from '../../contexts/authContext';
+import HelloLogout from "../../components/HelloLogout"
 
 function Home() {
+  const { user } = useAuth()
+
   return (
     <>
       <Header>
-        <LoginSignup/>
+        {user ? <HelloLogout /> : <LoginSignup/>}
       </Header>
       <main>
         <section className={styles.mainSection}>
@@ -102,12 +106,12 @@ function Home() {
         <section className={`${styles.type} ${styles.section}`}>
           <SectionHeader title={'Browse By Category'} subtitle={'Pick A Tour Type'} className={styles.typeHeader}></SectionHeader>
           <div className={styles.typeCards}>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
-            <TypeCard category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
+            <TypeCard icon={checkIcon} category={'Adventure'} tours={10} cost={120}></TypeCard>
           </div>
         </section>
         <section className={styles.testimonials}>

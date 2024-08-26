@@ -11,7 +11,7 @@ function LoginSignup() {
 
   return (
     <div className={styles.container} onClick={handleClick}>
-        <a href=""><img src={userIcon} alt="user icon" className={styles.icon}/></a>
+        <img src={userIcon} alt="user icon" className={styles.icon}/>
         <p>Login / Signup</p>
     </div>
   )

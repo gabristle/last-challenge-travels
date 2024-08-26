@@ -164,3 +164,9 @@
 .facebookButton:hover {
     background-color: var(--body);
 }
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+}
