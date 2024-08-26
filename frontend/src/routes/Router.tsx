@@ -4,14 +4,20 @@ import Home from '../pages/Home'
 import Tours from '../pages/Tours'
 import Tour from '../pages/Tour'
 import Error from '../pages/Error'
+import PrivateRoutes from './PrivateRoutes'
+import PublicRoutes from './PublicRoutes'
 
 function Router() {
   return (
     <Routes>
-        <Route path="/login" element={<Login />}/>
+        <Route element={<PublicRoutes/>}>
+          <Route path="/login" element={<Login />}/>
+        </Route>
+        <Route element={<PrivateRoutes/>}>
+          <Route path="/tours" element={<Tours />}/>
+          <Route path="/tour" element={<Tour />}/>
+        </Route>
         <Route path="/" element={<Home />}/>
-        <Route path="/tours" element={<Tours />}/>
-        <Route path="/tour" element={<Tour />}/>
         <Route path="*" element={<Error />}/>
     </Routes>
   )
