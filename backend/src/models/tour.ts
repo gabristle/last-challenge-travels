@@ -4,7 +4,16 @@ import Review from './review';
 import Category from './category';
 
 class Tour extends Model {
-    declare id: number;
+  [x: string]: any;
+  declare id: number
+  name!: string
+  country!: string
+  city!: string
+  start_date!: string
+  end_date!: string
+  averageGrade!: number
+  duration!: number
+  costPerPerson!: number
 }
   
 Tour.init(
@@ -48,11 +57,12 @@ Tour.init(
       }
     },
     { 
-        tableName: 'Tour',
-        sequelize },
+      tableName: 'Tour',
+      sequelize 
+    },
 );
 
 Tour.hasMany(Review, { foreignKey: 'reviewId' });
-Tour.hasMany(Category, { foreignKey: 'categoryId' });
+Tour.belongsToMany(Category, { through: 'PostCategory', as: 'categories', foreignKey: 'postId'});
 
 export default Tour

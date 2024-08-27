@@ -2,7 +2,9 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from '../database/db-config'
 
 class Destination extends Model {
-    declare id: number;
+  declare id: number;
+  name!: string
+  travelers!: number
 }
   
 Destination.init(
