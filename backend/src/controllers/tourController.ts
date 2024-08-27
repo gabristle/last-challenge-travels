@@ -1,5 +1,5 @@
-import Category from '../models/category'
-import Tour from '../models/tour'
+import Category from '../models/Category'
+import Tour from '../models/Tour'
 import { Request, Response } from 'express'
 
 export const tourController = {
@@ -18,7 +18,6 @@ export const tourController = {
             const tour = await Tour.create({ name, country, city, start_date, end_date, duration, costPerPerson, averageGrade : null })
             if(categories && categories.length > 0){
                 const category = await Category.findAll({where: {id: categories}})
-                await tour.setCategories(category)
             }
             res.status(200).json(tour)
         } catch(error) {

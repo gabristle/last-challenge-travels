@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import Destination from '../models/destination'
+import Destination from '../models/Destination'
 
-export const DestinationController = {
+export const destinationController = {
     async add(req: Request, res: Response): Promise<void> {
         try{
             const { name, travelers } = req.body

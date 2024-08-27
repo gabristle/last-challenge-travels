@@ -1,6 +1,6 @@
 import Review from '../models/Review'
 import { Request, Response } from 'express'
-import Tour from '../models/tour'
+import Tour from '../models/Tour'
 
 export const reviewController = {
 
