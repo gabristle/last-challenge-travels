@@ -3,7 +3,16 @@ import sequelize from '../database/db-config'
 import Tour from './tour';
 
 class Review extends Model {
-    declare id: number;
+    declare id: number
+    name_user!: string
+    name_email!: string
+    services!: number
+    locations!: number
+    amenities!: number
+    prices!: number
+    food!: number
+    room!: number
+    message!: string
 }
   
 Review.init(

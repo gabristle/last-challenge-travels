@@ -3,7 +3,8 @@ import sequelize from '../database/db-config'
 import Tour from './tour';
 
 class Category extends Model {
-    declare id: number;
+  declare id: number;
+  name!: string
 }
   
 Category.init(
@@ -23,6 +24,6 @@ Category.init(
         sequelize },
 )
 
-Category.belongsTo(Tour, { foreignKey: 'tourId' });
+Category.belongsToMany(Tour, { through: 'PostCategory', as: 'posts', foreignKey: 'categoryId'});
 
 export default Category
