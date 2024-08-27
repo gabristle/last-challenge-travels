@@ -18,7 +18,7 @@ export const reviewController = {
         }
     },
 
-    async deleteReview(req: Request, res: Response): Promise<void> {
+    async delete(req: Request, res: Response): Promise<void> {
         try {
             const reviewId = parseInt(req.params.id, 10)
             const review = await Review.findByPk(reviewId)

@@ -38,7 +38,7 @@ export const tourController = {
         }
     },
 
-    async deleteTour(req: Request, res: Response): Promise<void> {
+    async delete(req: Request, res: Response): Promise<void> {
         try {
             const tourId = parseInt(req.params.id, 10)
             const deletedTour = await Tour.destroy({ where: {id: tourId}})
