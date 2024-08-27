@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize'
 import sequelize from '../database/db-config'
-import TourCategory from './TourCategory'
 import Category from './Category'
 import Review from './Review'
 
@@ -22,6 +21,7 @@ Tour.init(
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+        allowNull: false
       },
       name: {
         type: DataTypes.STRING,
@@ -44,27 +44,27 @@ Tour.init(
         allowNull: false
       },
       averageGrade: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       duration: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       costPerPerson: {
-        type: DataTypes.NUMBER,
-        allowNull: true
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },
     { 
-      tableName: 'Tour',
+      modelName: 'Tour',
       sequelize 
     },
 );
 
-Tour.belongsToMany(Category, { through: TourCategory, foreignKey: 'tourId'})
-Category.belongsToMany(Tour, { through: TourCategory, foreignKey: 'categoryId'})
-Review.belongsTo(Tour, { constraints: true, foreignKey: 'tourId'})
-Tour.hasMany(Review, { foreignKey: 'reviewId'})
+Tour.belongsTo(Category, { foreignKey: 'categoryId'})
+Category.hasMany(Tour, { foreignKey: 'categoryId'})
 
+Review.belongsTo(Tour, { foreignKey: 'tourId'})
+Tour.hasMany(Review, { foreignKey: 'tourId'})
 export default Tour

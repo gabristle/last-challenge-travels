@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import Category from '../models/Category'
+import Tour from '../models/Tour'
 
 export const categoryController = {
     async list(req: Request, res: Response): Promise<void> {
@@ -8,6 +9,21 @@ export const categoryController = {
             res.status(200).json(categories)
         } catch(error) {
             res.status(400).json({ message: error })
+        }
+    },
+
+    async listById(req: Request, res: Response): Promise<Response>{
+        try {
+            const categoryId = parseInt(req.params.id, 10)
+            const category = await Category.findByPk(categoryId, {
+                include: [Tour]
+            })
+            if(category) {
+                return res.status(200).json(category)
+            }
+            return res.status(400).json({message: 'Category not found!'})
+        }catch(error){
+            return res.status(400).json({message: error})
         }
     },
 

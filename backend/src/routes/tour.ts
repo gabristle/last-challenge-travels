@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', tourController.list)
 
-router.get('/:id', tourController.getTourById)
+router.get('/:id', tourController.listById)
 
 router.post('/', tourController.add)
 
