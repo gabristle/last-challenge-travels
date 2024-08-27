@@ -1,4 +1,5 @@
 import Category from '../models/Category'
+import Review from '../models/Review'
 import Tour from '../models/Tour'
 import { Request, Response } from 'express'
 
@@ -12,33 +13,32 @@ export const tourController = {
         }
     },
 
-    async add(req: Request, res: Response): Promise<void> {
+    async add(req: Request, res: Response): Promise<Response> {
         try{
             const { name, country, city, start_date, end_date, duration, costPerPerson, categoryId } = req.body
-            const tour = await Tour.create({ name, country, city, start_date, end_date, duration, costPerPerson, averageGrade : null })
-            if(categoryId && categoryId.length > 0){
-                
+            const category = await Category.findByPk(categoryId)
+            if(!category) {
+                return res.status(400).json({message: 'Category not found!'})
             }
-
-            const createdTour = await Tour.findByPk(tour.id, {
-                include: Category
-            })
-            res.status(200).json(createdTour)
+            const tour = await Tour.create({ name, country, city, start_date, end_date, duration, costPerPerson, averageGrade : 0, categoryId})
+            return res.status(200).json(tour)
         } catch(error) {
-            res.status(400).json({ message: error})
+            return res.status(400).json({ message: error})
         }
     },
 
-    async getTourById(req: Request, res: Response): Promise<void> {
+    async listById(req: Request, res: Response): Promise<Response> {
         try {
             const tourId = parseInt(req.params.id, 10)
-            const tour = await Tour.findByPk(tourId)
+            const tour = await Tour.findByPk(tourId, {
+                include: [Review]
+            })
             if(tour) {
-                res.status(200).json(tour)
+                return res.status(200).json(tour)
             }
-            res.status(400).json({ message: 'Tour not found'})
+            return res.status(400).json({ message: 'Tour not found'})
         } catch(error) {
-            res.status(400).json({ message: error})
+            return res.status(400).json({ message: error})
         }
     },
 

@@ -19,13 +19,13 @@ Destination.init(
         allowNull: false
       },
       travelers: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false
       }
     },
     { 
-        tableName: 'Destination',
-        sequelize },
+      modelName: 'Destination',
+      sequelize },
 );
 
 export default Destination
