@@ -1,4 +1,4 @@
-import Review from '../models/review'
+import Review from '../models/Review'
 import { Request, Response } from 'express'
 import Tour from '../models/tour'
 

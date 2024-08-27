@@ -1,10 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../database/db-config'
-import Review from './review';
-import Category from './category';
 
 class Tour extends Model {
-  [x: string]: any;
   declare id: number
   name!: string
   country!: string
@@ -61,8 +58,5 @@ Tour.init(
       sequelize 
     },
 );
-
-Tour.hasMany(Review, { foreignKey: 'reviewId' });
-Tour.belongsToMany(Category, { through: 'PostCategory', as: 'categories', foreignKey: 'postId'});
 
 export default Tour
