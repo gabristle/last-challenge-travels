@@ -1,5 +1,9 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model } from 'sequelize'
 import sequelize from '../database/db-config'
+import TourCategory from './TourCategory'
+import Category from './Category'
+import Review from './Review'
+import { CONSTRAINT } from 'sqlite3'
 
 class Tour extends Model {
   declare id: number
@@ -58,5 +62,10 @@ Tour.init(
       sequelize 
     },
 );
+
+Tour.belongsToMany(Category, { through: { model: TourCategory}, foreignKey: 'postId', constraints: true})
+Category.belongsToMany(Tour, { through: { model: TourCategory}, foreignKey: 'categoryId', constraints: true})
+Review.belongsTo(Tour, { constraints: true, foreignKey: 'tourId',  })
+Tour.hasMany(Review, { foreignKey: 'reviewId'})
 
 export default Tour
