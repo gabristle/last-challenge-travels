@@ -1,5 +1,3 @@
-import Category from "./Category"
-import Tour from "./Tour"
 import { DataTypes, Model } from 'sequelize'
 import sequelize from '../database/db-config'
 
@@ -9,10 +7,21 @@ class TourCategory extends Model {
 
 TourCategory.init (
     {
-        id: {
+        tourId: {
             type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
+            references: {
+                model: 'Tours',
+                key: 'id',
+            },
+            allowNull: false
+        },
+        categoryId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Categories',
+                key: 'id',
+            },
+            allowNull:false
         }
     },
     { 

@@ -3,6 +3,8 @@ import { categoryController } from '../controllers/categoryController'
 
 const router = express.Router()
 
+router.get('/', categoryController.list)
+
 router.post('/', categoryController.add)
 
 router.delete('/:id', categoryController.delete)

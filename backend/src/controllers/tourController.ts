@@ -14,12 +14,16 @@ export const tourController = {
 
     async add(req: Request, res: Response): Promise<void> {
         try{
-            const { name, country, city, start_date, end_date, duration, costPerPerson, categories } = req.body
+            const { name, country, city, start_date, end_date, duration, costPerPerson, categoryId } = req.body
             const tour = await Tour.create({ name, country, city, start_date, end_date, duration, costPerPerson, averageGrade : null })
-            if(categories && categories.length > 0){
-                const category = await Category.findAll({where: {id: categories}})
+            if(categoryId && categoryId.length > 0){
+                
             }
-            res.status(200).json(tour)
+
+            const createdTour = await Tour.findByPk(tour.id, {
+                include: Category
+            })
+            res.status(200).json(createdTour)
         } catch(error) {
             res.status(400).json({ message: error})
         }
