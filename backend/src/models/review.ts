@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../database/db-config'
-import Tour from './tour';
 
 class Review extends Model {
     declare id: number
@@ -63,7 +62,5 @@ Review.init(
         tableName: 'Review',
         sequelize },
 );
-
-Review.belongsTo(Tour, { foreignKey: 'tourId' });
 
 export default Review
