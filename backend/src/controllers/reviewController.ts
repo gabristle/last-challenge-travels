@@ -1,6 +1,6 @@
 import Review from '../models/Review'
 import { Request, Response } from 'express'
-import Tour from '../models/tour'
+import Tour from '../models/Tour'
 
 export const reviewController = {
 
@@ -18,7 +18,7 @@ export const reviewController = {
         }
     },
 
-    async deleteReview(req: Request, res: Response): Promise<void> {
+    async delete(req: Request, res: Response): Promise<void> {
         try {
             const reviewId = parseInt(req.params.id, 10)
             const review = await Review.findByPk(reviewId)
