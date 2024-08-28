@@ -12,6 +12,7 @@ class Review extends Model {
     food!: number
     room!: number
     message!: string
+    averageGrade!: number
 }
   
 Review.init(
@@ -55,6 +56,10 @@ Review.init(
         },
         message: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        averageGrade: {
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     },

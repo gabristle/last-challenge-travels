@@ -13,6 +13,7 @@ class Tour extends Model {
   averageGrade!: number
   duration!: number
   costPerPerson!: number
+  declare Reviews?: Review[]
 }
   
 Tour.init(

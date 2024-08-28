@@ -6,8 +6,17 @@ import { Request, Response } from 'express'
 export const tourController = {
     async list(req: Request, res: Response): Promise<void> {
         try{
-            const tours = await Tour.findAll()
-            res.status(200).json(tours)
+            const page = parseInt(req.params.page) || 1
+            const limit = parseInt(req.params.limit) || 10
+            const offset = (page-1) * limit
+            const tours = await Tour.findAll({
+                limit: limit,
+                offset: offset
+            })
+
+            const count = await Tour.count()
+
+            res.status(200).json({tours, count})
         } catch(error) {
             res.status(400).json({ message: error})
         }
