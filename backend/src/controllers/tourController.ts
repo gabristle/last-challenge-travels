@@ -22,6 +22,15 @@ export const tourController = {
         }
     },
 
+    async listPopular(req: Request, res: Response): Promise<void> {
+        try{
+            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}})
+            res.status(200).json(tours)
+        }catch(error){
+            res.status(400).json({message: error})
+        }
+    },
+
     async add(req: Request, res: Response): Promise<Response> {
         try{
             const { name, country, city, start_date, end_date, duration, costPerPerson, categoryId } = req.body
