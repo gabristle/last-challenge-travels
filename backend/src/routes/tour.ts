@@ -3,7 +3,7 @@ import { tourController } from '../controllers/tourController'
 
 const router = express.Router()
 
-router.get('/', tourController.list)
+router.get('/:page/:limit', tourController.list)
 
 router.get('/:id', tourController.listById)
 
