@@ -12,6 +12,27 @@ export const categoryController = {
         }
     },
 
+    async details(req: Request, res: Response): Promise<void>{
+        try{
+            const categories = await Category.findAll({
+                include: [{
+                    model: Tour,
+                    attributes: [
+                        'id', 'name', 'costPerPerson'
+                    ]
+                }]
+            })
+            const categoriesDetails = categories.map(category => {
+                const tourCosts = category.Tours ? category.Tours.map(tour => tour.costPerPerson) : []
+                const cheapestCost = Math.min(...tourCosts)
+                return {name: category.name, totalTours: category.Tours?.length, cheapestCost: cheapestCost}
+            })
+            res.status(200).json(categoriesDetails)
+        }catch(error){
+            res.status(400).json({ message: error})
+        }   
+    },
+
     async listById(req: Request, res: Response): Promise<Response>{
         try {
             const categoryId = parseInt(req.params.id, 10)
@@ -37,16 +58,16 @@ export const categoryController = {
         }
     },
 
-    async delete(req: Request, res: Response): Promise<void> {
+    async delete(req: Request, res: Response): Promise<Response> {
         try {
             const categoryId = req.params.id
             const category = await Category.destroy({where: {id: categoryId}})
             if(category) {
-                res.status(200).json({ message: 'Category deleted with success!' })
+                return res.status(200).json({ message: 'Category deleted with success!' })
             }
-            res.status(400).json({ message: 'Category not found!' })
+            return res.status(400).json({ message: 'Category not found!' })
         } catch(error) {
-            res.status(400).json({ message: error })
+            return res.status(400).json({ message: error })
         }
     },
 }
