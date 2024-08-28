@@ -6,9 +6,11 @@ import destinationRouter from './src/routes/destination'
 import reviewRouter from './src/routes/review'
 import tourRouter from './src/routes/tour'
 import ratingRouter from './src/routes/rating'
+import cors from 'cors'
 
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 
 app.use('/category', categoryRouter)
 app.use('/destination', destinationRouter)
