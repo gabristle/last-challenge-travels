@@ -9,7 +9,7 @@ import mailIcon from '../../assets/mail.png'
 import lockIcon from '../../assets/lock.png'
 import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../../services/firebaseConfig'
+import { auth } from '../../services/firebase/firebaseConfig'
 import { useState } from 'react'
 
 function Login() {
