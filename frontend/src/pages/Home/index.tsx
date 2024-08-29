@@ -4,7 +4,6 @@ import SearchCard from "../../components/SearchCard"
 import mainImg from "../../assets/mainImage.png"
 import styles from "./style.module.css"
 import SectionHeader from "../../components/SectionHeader"
-import TourCard from "../../components/TourCard"
 import Statistic from "../../components/Statistic"
 import DestinationCard from "../../components/DestinationCard"
 import watchNow from "../../assets/watchNow.png"
@@ -21,6 +20,7 @@ import travelIcon5 from '../../assets/travelIcon5.png'
 import { useAuth } from '../../contexts/AuthContext';
 import HelloLogout from "../../components/HelloLogout"
 import TypeCaroussel from "../../components/TypeCaroussel"
+import PopularToursCaroussel from "../../components/PopularToursCaroussekl"
 
 function Home() {
   const { user } = useAuth()
@@ -30,7 +30,7 @@ function Home() {
       <Header>
         {user ? <HelloLogout /> : <LoginSignup/>}
       </Header>
-      <main>
+      <main className={styles.homeContent}>
         <section className={styles.mainSection}>
           <img src={mainImg} alt="cologne cathedral photo" className={styles.mainImg}/>
           <SearchCard className={styles.searchCard}></SearchCard>
@@ -38,10 +38,7 @@ function Home() {
         <section className={`${styles.tourSection} ${styles.section}`}>
           <SectionHeader title={'Tours'} subtitle={'Most Popular Tour'} className={styles.sectionHeader}></SectionHeader>
           <div className={styles.cards}>
-            <TourCard image={mainImg} location={'Cologne, Germany'} tour={'Activies at Cologne Germany'} grade={4} reviews={10} duration={5} cost={512}></TourCard>
-            <TourCard image={mainImg} location={'Cologne, Germany'} tour={'Activies at Cologne Germany'} grade={4} reviews={10} duration={5} cost={512}></TourCard>
-            <TourCard image={mainImg} location={'Cologne, Germany'} tour={'Activies at Cologne Germany'} grade={4} reviews={10} duration={5} cost={512}></TourCard>
-            <TourCard image={mainImg} location={'Cologne, Germany'} tour={'Activies at Cologne Germany'} grade={4} reviews={10} duration={5} cost={512}></TourCard>
+            <PopularToursCaroussel></PopularToursCaroussel>
           </div>
         </section>
         <div className={styles.line}></div>

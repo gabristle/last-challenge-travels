@@ -11,7 +11,7 @@ function TypeCaroussel() {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        const splide = new Splide('.splide', {
+        const splideType = new Splide('#typeSplide', {
             type: 'loop',
             perPage: 6,
             autoplay: true,
@@ -21,7 +21,7 @@ function TypeCaroussel() {
         }).mount()
 
         return () => {
-            splide.destroy()
+            splideType.destroy()
         };
     }, [categories])
 
@@ -39,7 +39,7 @@ function TypeCaroussel() {
     }, [])
 
   return (
-    <div className={`splide ${styles.splideContainer}`}>
+    <div className={`splide ${styles.splideCategory}`} id='typeSplide'>
         <div className='splide__track'>
             <ul className='splide__list'>
                 {categories?.map((category: Category, index) => {

@@ -5,7 +5,8 @@ import Clock from '../../assets/clock.png'
 
 interface TourCardProps {
   image: string
-  location: string
+  city: string
+  country: string
   tour: string
   grade: number
   reviews: number
@@ -13,7 +14,7 @@ interface TourCardProps {
   cost: number
 }
 
-function TourCard({ image, location, tour, grade, reviews, duration, cost }:TourCardProps) {
+function TourCard({ image, tour, grade, reviews, duration, cost, city, country }:TourCardProps) {
   return (
     <div className={styles.cardContainer}>
         <div className={styles.imageContainer}>
@@ -23,7 +24,7 @@ function TourCard({ image, location, tour, grade, reviews, duration, cost }:Tour
           <img src={image} alt={`image from ${tour}`} className={styles.image}/>
         </div>
         <div className={styles.infoContainer}>
-            <p>{location}</p>
+            <p>{city}, {country}</p>
             <h3 className={styles.tourName}>{tour}</h3>
             <div className={styles.infoRow}>
                 <div className={styles.gradeRow}>

@@ -2,7 +2,7 @@ import api from '../../http-common'
 
 const popularTours = async () => {
     try{
-        const response = await api.get('/tours/popular')
+        const response = await api.get('/tour/popular')
         return response.data
     }catch(error){
         console.error(error);
