@@ -5,7 +5,8 @@ import pinkStar from '../../assets/pinkStar.png'
 import share from '../../assets/share.png'
 
 interface DetailsProps {
-    location: string
+    city: string
+    country: string
     tour: string
     costPerPerson: number
     duration: number
@@ -16,14 +17,14 @@ interface DetailsProps {
     reviews: number
 }
 
-function Details({ location, tour, costPerPerson, duration, maxPeople, minAge, type, grade, reviews }: DetailsProps) {
+function Details({ city, country, tour, costPerPerson, duration, maxPeople, minAge, type, grade, reviews }: DetailsProps) {
   return (
     <div className={styles.detailsContainer}>
         <div className={styles.actionsRow}>
             <div className={styles.localization}>
                 <div className={styles.localizationRow}>
                     <img src={localization} alt="location icon" className={styles.icon}/>
-                    <p>{location}</p>
+                    <p>{city}, {country}</p>
                 </div>
                 <a href="">View on map</a>
             </div>
