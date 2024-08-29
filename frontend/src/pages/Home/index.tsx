@@ -33,6 +33,11 @@ function Home() {
       <main className={styles.homeContent}>
         <section className={styles.mainSection}>
           <img src={mainImg} alt="cologne cathedral photo" className={styles.mainImg}/>
+          <div className={styles.mainText}>
+            <h1 className={styles.mainTitle}>Save 15% off in Wordwide</h1>
+            <h2 className={styles.mainSubtitle}>Travel & Adventures</h2>
+            <p className={styles.mainDescription}>Find awesome hotel, tour, car and activities in London</p>
+          </div>
           <SearchCard className={styles.searchCard}></SearchCard>
         </section>
         <section className={`${styles.tourSection} ${styles.section}`}>

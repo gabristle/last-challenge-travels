@@ -68,7 +68,7 @@
     height: 15px;
 }
 
-.cardContainer p {
+.infoContainer p {
     font-size: 14px;
     font-weight: 300;
 }
@@ -86,11 +86,11 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-.cardContainer small {
+.infoContainer small {
     font-size: 12px;
 }
 
-.cost {
+.infoContainer .cost {
     font-family: 'Kaushan Script';
     font-size: 20px;
     color: var(--blue);
