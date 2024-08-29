@@ -1,8 +1,14 @@
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
     justify-content: center;
+}
+
+.mainSections {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .mainSection {
@@ -56,4 +62,17 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.sectionTitle {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    margin-top: 6.5rem;
+    text-align: center;
+}
+
+.suggestion {
+    padding: 0rem 8rem;
+    margin-bottom: 5rem;
 }
