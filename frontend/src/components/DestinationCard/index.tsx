@@ -1,21 +1,37 @@
+import { useEffect, useState } from 'react'
 import styles from './style.module.css'
+import { Destination } from '../../interfaces/Destination'
+import destinationService from '../../services/destination/destinationService'
 
 interface DestinationCardProps {
     image: string
-    travelers: number
-    destination: string
-    id?: string
+    id: number
 }
 
-function DestinationCard({ image, travelers, destination, id }: DestinationCardProps) {
+function DestinationCard({ image, id }: DestinationCardProps) {
+  const [destination, setDestination] = useState<Destination | null>(null)
+
+  useEffect(() => {
+    const getDestination = async () => {
+      try{
+        const destination = await destinationService.destinationDetails(id)
+        setDestination(destination)
+      }catch(error){
+        console.error(error)
+      }
+    }
+
+    getDestination() 
+  }, [])
+
   return (
-    <div className={styles.destinationContainer} id={id}>
+    <div className={styles.destinationContainer}>
         <div className={styles.gradient}>
         </div>
         <img src={image} alt={`${destination} photo`} className={styles.destinationImg}/>
         <div className={styles.destinationInfos}>
-            <small className={styles.travelers}>{travelers} Travelers</small>
-            <h3 className={styles.destination}>{destination}</h3>
+            <small className={styles.travelers}>{destination?.travelers} Travelers</small>
+            <h3 className={styles.destination}>{destination?.name}</h3>
         </div>
         
     </div>
