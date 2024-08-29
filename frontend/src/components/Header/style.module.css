@@ -58,24 +58,24 @@
     width: 680px;
 }
 
-nav {
+.navigationContainer nav {
     width: 510px;
 }
 
-ul {
+.navigationContainer ul {
     display: flex;
     justify-content: space-between;
 }
 
-li {
+.navigationContainer li {
     font-size: 1rem;
 }
 
-a {
+.navigationContainer a {
     text-decoration: none;
     color: var(--blue);
 }
 
-a li:hover {
+.navigationContainer a li:hover {
     color: var(--pink);
 }

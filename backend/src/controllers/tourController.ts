@@ -11,12 +11,17 @@ export const tourController = {
             const offset = (page-1) * limit
             const tours = await Tour.findAll({
                 limit: limit,
-                offset: offset
+                offset: offset,
+                include: [Review, Category]
             })
+            const toursReviews = tours.map(tour => ({
+                ...tour.toJSON(),
+                reviewCount: tour.Reviews?.length || 0
+            }))
 
             const count = await Tour.count()
 
-            res.status(200).json({tours, count})
+            res.status(200).json({tours: toursReviews, count})
         } catch(error) {
             res.status(400).json({ message: error})
         }
@@ -24,8 +29,12 @@ export const tourController = {
 
     async listPopular(req: Request, res: Response): Promise<void> {
         try{
-            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}})
-            res.status(200).json(tours)
+            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}, include: [Review, Category]})
+            const toursReviews = tours.map(tour => ({
+                ...tour.toJSON(),
+                reviewCount: tour.Reviews?.length || 0
+            }))
+            res.status(200).json(toursReviews)
         }catch(error){
             res.status(400).json({message: error})
         }

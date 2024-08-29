@@ -68,7 +68,7 @@
     height: 15px;
 }
 
-p {
+.cardContainer p {
     font-size: 14px;
     font-weight: 300;
 }
@@ -86,7 +86,7 @@ p {
     font-family: 'Work Sans', sans-serif;
 }
 
-small {
+.cardContainer small {
     font-size: 12px;
 }
 

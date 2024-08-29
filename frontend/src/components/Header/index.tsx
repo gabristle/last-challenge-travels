@@ -6,12 +6,14 @@ import pinterestIcon from '../../assets/pinterest.png'
 import linkedinIcon from '../../assets/linkedin.png'
 import bottomIcon from '../../assets/bottom.png'
 import trisogLogo from '../../assets/logoTrisog.png'
+import { useNavigate } from 'react-router-dom'
 
 interface HeaderProps {
     children: ReactNode
 }
 
 function Header({ children }:HeaderProps) {
+
   return (
     <header className={styles.headerContainer}>
         <div className={styles.topHeader}>
@@ -35,25 +37,25 @@ function Header({ children }:HeaderProps) {
                 <img src={trisogLogo} alt="Trisog logo" className={styles.logo}/>
                 <nav>
                     <ul>
-                        <a href="#">
+                        <a href={'/'}>
                             <li>Home</li>
                         </a>
-                        <a href="#">
+                        <a href={'/error'}>
                             <li>About</li>
                         </a>
-                        <a href="#">
+                        <a href={'/tours'}>
                             <li>Tours</li>
                         </a>
-                        <a href="#">
+                        <a href={'/error'}>
                             <li>Destination</li>
                         </a>
-                        <a href="#">
+                        <a href={'/error'}>
                             <li>Blog</li>
                         </a>
-                        <a href="#">
+                        <a href={'/error'}>
                             <li>Pages</li>
                         </a>
-                        <a href="#">
+                        <a href={'/error'}>
                             <li>Contact</li>
                         </a>
                     </ul>
