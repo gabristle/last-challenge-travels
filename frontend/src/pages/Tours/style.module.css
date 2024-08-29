@@ -1,8 +1,12 @@
 .mainSection {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.imgHeader{
+    width: 100%;
 }
 
 .titleSection {
@@ -32,4 +36,32 @@
 .searchCard {
     position: absolute;
     bottom: -50px;
+}
+
+.mainContent {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 8rem;
+}
+
+.toursContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 62%;
+    margin-top: 2.5rem;
+}
+
+.tours {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }

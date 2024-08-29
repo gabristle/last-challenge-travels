@@ -5,7 +5,7 @@ function Tour() {
   return (
     <>
       <Header>
-          <HelloLogout name={'Gabriella'}/>
+          <HelloLogout/>
       </Header>
     </>
   )
