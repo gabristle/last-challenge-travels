@@ -21,6 +21,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import HelloLogout from "../../components/HelloLogout"
 import TypeCaroussel from "../../components/TypeCaroussel"
 import PopularToursCaroussel from "../../components/PopularToursCaroussekl"
+import Destinations from "../../components/Destinations"
 
 function Home() {
   const { user } = useAuth()
@@ -55,22 +56,7 @@ function Home() {
         </section>
         <section className={`${styles.destinations} ${styles.section}`}>
           <SectionHeader title={'Destination'} subtitle={'Top Attractions Destinations'}></SectionHeader>
-          <div className={styles.destinationsGrids}>
-            <div className={styles.gridsContainer}>
-              <div className={styles.destinationsGrid}>
-                <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-                <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-                <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-              </div>
-              <div className={`${styles.destinationsGrid} ${styles.gridSecondRow}`}>
-                <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-                <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-              </div>
-            </div>
-            <div className={styles.destination}>
-              <DestinationCard image={mainImg} travelers={124.500} destination={'Germany'}/>
-            </div>
-          </div>
+          <Destinations></Destinations>
         </section>
         <section className={`${styles.chooseUs} ${styles.section}`}>
           <div>

@@ -81,34 +81,6 @@
     padding: 100px 8rem;
 }
 
-.destinationsGrids {
-    display: flex;
-    gap: 2rem;
-    height: 400px;
-    margin-top: 3.5rem;
-}
-
-.destinationsGrid {
-    display: flex;
-    height: 275px;
-    gap: 2rem;
-}
-
-.gridsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.gridSecondRow {
-    width: 100%;
-    align-items: stretch;
-}
-
-.destination :first-child{
-    width: 275px;
-}
-
 .chooseUs {
     display: flex;
     padding: 95px 10rem 80px 10rem;
