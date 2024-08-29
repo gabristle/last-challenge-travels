@@ -4,6 +4,8 @@ import mainImg from '../../assets/mainImage.png'
 import Details from '../../components/Details'
 import styles from './style.module.css'
 import AverageReviews from '../../components/AverageReviews'
+import ReviewCard from '../../components/ReviewCard'
+import ReviewForm from '../../components/ReviewForm'
 
 function Tour() {
   return (
@@ -27,6 +29,11 @@ function Tour() {
           <section className={styles.averageReviews}>
             <h2 className={styles.title}>Average Reviews</h2>
             <AverageReviews></AverageReviews>
+          </section>
+          <section className={styles.reviews}>
+            <h3 className={styles.subtitle}>Showing 1 review</h3>
+            <ReviewCard date={'March 20, 2024'} author={'Anonimo'} reviews={1}>Objectively productivate just in time information with dynamic channels. Energistically exploit seamless growth strategies after 24/7 experiences</ReviewCard>
+            <ReviewForm></ReviewForm>
           </section>
         </section>
         <aside className={styles.calculatorSection}>Calculator</aside>
