@@ -24,11 +24,6 @@
     width: 230px;
 }
 
-.footerContainer p {
-    font-size: 1rem;
-    font-weight: 200;
-}
-
 .span {
     color: var(--pink)
 }
