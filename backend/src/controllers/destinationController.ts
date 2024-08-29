@@ -11,6 +11,16 @@ export const destinationController = {
         }
     },
 
+    async listById(req: Request, res: Response): Promise<void> {
+        try{
+            const destinationId = req.params.id
+            const destination = await Destination.findByPk(destinationId)
+            res.status(200).json(destination)
+        }catch(error){
+            res.status(400).json({message: error})
+        }
+    },
+
     async add(req: Request, res: Response): Promise<void> {
         try{
             const { name, travelers } = req.body
