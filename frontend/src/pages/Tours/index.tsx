@@ -5,7 +5,6 @@ import SearchCard from '../../components/SearchCard'
 import styles from './style.module.css'
 import FilterCard from '../../components/FilterCard'
 import Footer from '../../components/Footer'
-import TourCard from '../../components/TourCard'
 import Sort from '../../components/Sort'
 import Button from '../../components/Button'
 
@@ -92,15 +91,7 @@ function Tours() {
           <section className={styles.toursContainer}>
             <Sort tours={9}></Sort>
             <div className={styles.tours}>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
-              <TourCard></TourCard>
+      
             </div>
           </section>
         </section>

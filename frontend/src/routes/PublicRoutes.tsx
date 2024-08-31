@@ -1,5 +1,5 @@
 import { Outlet, Navigate } from 'react-router-dom'
-import { useAuth } from '../contexts/authContext'
+import { useAuth } from '../contexts/AuthContext'
 
 const PublicRoutes: React.FC = () => {
   const { user, loading } = useAuth()

@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import { useAuth } from '../../contexts/authContext'
+import { useAuth } from '../../contexts/AuthContext'
 
 interface HelloLogoutProps {
     image?: string
