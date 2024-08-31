@@ -81,8 +81,8 @@ function Login() {
                 <Input icon={lockIcon} type={'password'} placeholder={'Enter your password'} onChange={(e) => setPassword(e.target.value)}></Input>
               </div>
               {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
-              <Button onClick={handleSignIn}>Sign In</Button>
-              <Button className={styles.signUpButton} onClick={handleSignUp}>Sign Up</Button>
+              <Button onClick={handleSignIn} className={styles.button}>Sign In</Button>
+              <Button className={`${styles.signUpButton} ${styles.button}`} onClick={handleSignUp}>Sign Up</Button>
             </div>
             <div className={styles.divider}>
               <div className={styles.line}></div>
@@ -90,8 +90,8 @@ function Login() {
               <div className={styles.line}></div>
             </div>
             <div className={styles.socialButtons}>
-              <Button className={styles.googleButton} onClick={handleSignInGoogle}><span><img src={googleIcon} alt="google icon" />Google</span></Button>
-              <Button className={styles.facebookButton} onClick={handleSignInFacebook}><span><img src={facebookIcon} alt="facebook icon" />Facebook</span></Button>
+              <Button className={`${styles.googleButton} ${styles.button}`} onClick={handleSignInGoogle}><span><img src={googleIcon} alt="google icon" />Google</span></Button>
+              <Button className={`${styles.facebookButton} ${styles.button}`} onClick={handleSignInFacebook}><span><img src={facebookIcon} alt="facebook icon" />Facebook</span></Button>
             </div>
           </form>
         </div>
