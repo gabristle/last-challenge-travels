@@ -6,10 +6,12 @@ import styles from './style.module.css'
 import AverageReviews from '../../components/AverageReviews'
 import ReviewCard from '../../components/ReviewCard'
 import ReviewForm from '../../components/ReviewForm'
-import PopularToursCaroussel from '../../components/PopularToursCaroussekl'
+import PopularToursCaroussel from '../../components/PopularToursCaroussel'
 import Footer from '../../components/Footer'
 
+
 function Tour() {
+
   return (
     <>
       <Header>

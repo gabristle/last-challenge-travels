@@ -19,7 +19,7 @@ import travelIcon5 from '../../assets/travelIcon5.png'
 import { useAuth } from '../../contexts/AuthContext';
 import HelloLogout from "../../components/HelloLogout"
 import TypeCaroussel from "../../components/TypeCaroussel"
-import PopularToursCaroussel from "../../components/PopularToursCaroussekl"
+import PopularToursCaroussel from "../../components/PopularToursCaroussel"
 import Destinations from "../../components/Destinations"
 
 function Home() {
