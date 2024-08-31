@@ -5,7 +5,9 @@
   "scripts": {
     "start:dev": "nodemon app.ts",
     "start": "node ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add-database": "ts-node src/database/data.ts",
+    "add-tours": "ts-node src/database/addTours.ts"
   },
   "keywords": [],
   "author": "",

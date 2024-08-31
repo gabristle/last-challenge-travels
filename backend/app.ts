@@ -20,7 +20,7 @@ app.use('/rating', ratingRouter)
 
 const PORT = 3000
 
-sequelize.sync().then( () => {
+sequelize.sync({force: true}).then( () => {
     app.listen(PORT, () => {
       console.info(`Server running on http://localhost:${PORT}`)
     })
