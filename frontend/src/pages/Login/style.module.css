@@ -123,6 +123,10 @@
     background-color: var(--gray);
 }
 
+.button {
+    width: 100% !important;
+}
+
 .signUpButton {
     background-color: white;
     color: var(--subdued);

@@ -5,7 +5,6 @@ import mainImg from "../../assets/mainImage.png"
 import styles from "./style.module.css"
 import SectionHeader from "../../components/SectionHeader"
 import Statistic from "../../components/Statistic"
-import DestinationCard from "../../components/DestinationCard"
 import watchNow from "../../assets/watchNow.png"
 import checkIcon from '../../assets/check.png'
 import Footer from "../../components/Footer"
@@ -42,7 +41,7 @@ function Home() {
           <SearchCard className={styles.searchCard}></SearchCard>
         </section>
         <section className={`${styles.tourSection} ${styles.section}`}>
-          <SectionHeader title={'Tours'} subtitle={'Most Popular Tour'} className={styles.sectionHeader}></SectionHeader>
+          <SectionHeader title={'Tours'} subtitle={'Most Popular Tours'} className={styles.sectionHeader}></SectionHeader>
           <div className={styles.cards}>
             <PopularToursCaroussel></PopularToursCaroussel>
           </div>

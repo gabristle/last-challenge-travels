@@ -34,11 +34,6 @@
     width: 100%;
 }
 
-.form Button {
-    width: 180px !important;
-    height: 55px;
-}
-
 .formInputs {
     display: flex;
     flex-direction: column;
