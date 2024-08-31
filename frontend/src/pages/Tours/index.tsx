@@ -7,8 +7,38 @@ import FilterCard from '../../components/FilterCard'
 import Footer from '../../components/Footer'
 import Sort from '../../components/Sort'
 import Button from '../../components/Button'
+import { useEffect, useState } from 'react'
+import tourService from '../../services/tour/tourService'
+import { Tour } from '../../interfaces/Tour'
+import TourCard from '../../components/TourCard'
+import cologne from '../../assets/cologne.png'
+import PaginationButton from '../../components/PaginationButton'
 
 function Tours() {
+  const [tours, setTours] = useState<Tour[]>([])
+  const [countTours, setCountTours] = useState<number>(0)
+  const [totalPages, setTotalPages] = useState<number>(0)
+  const [currentPage, setCurrentPage] = useState<number>(1)
+
+  useEffect(() => {
+    const getTours = async (page: number) => {
+      try{
+        const data = await tourService.allTours(page, 9)
+        setTours(data.tours)
+        setCountTours(data.count)
+        setTotalPages(data.totalPages)
+      }catch(error){
+        console.error(error)
+      }
+    }
+
+    getTours(currentPage)
+  }, [currentPage])
+
+  function handlePaginationClick(value: number) {
+    setCurrentPage(value)
+  }
+
   return (
     <>
       <Header>
@@ -89,9 +119,22 @@ function Tours() {
             </FilterCard>
           </aside>
           <section className={styles.toursContainer}>
-            <Sort tours={9}></Sort>
+            <Sort tours={countTours}></Sort>
             <div className={styles.tours}>
-      
+              {tours?.map((tour: Tour, index: number) => {
+                return ( 
+                  <div key={index}>    
+                    <TourCard image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
+                  </div>    
+                )
+              })}
+            </div>
+            <div className={styles.paginationButtons}>
+              <PaginationButton onClick={() => handlePaginationClick(currentPage-1)}>{'<'}</PaginationButton>
+              {Array.from({length: totalPages}, (_, index) => (
+                <PaginationButton key={index+1} onClick={() => handlePaginationClick(index+1)}>{index+1}</PaginationButton>
+              ))}
+              <PaginationButton onClick={() => handlePaginationClick(currentPage+1)}>{'>'}</PaginationButton>
             </div>
           </section>
         </section>

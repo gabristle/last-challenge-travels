@@ -22,7 +22,9 @@ export const tourController = {
 
             const count = await Tour.count()
 
-            res.status(200).json({tours: toursReviews, count})
+            const totalPages = Math.ceil(count / limit)
+
+            res.status(200).json({tours: toursReviews, count, totalPages})
         } catch(error) {
             res.status(400).json({ message: error})
         }

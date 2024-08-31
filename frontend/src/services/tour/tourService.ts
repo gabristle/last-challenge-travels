@@ -9,8 +9,18 @@ const popularTours = async () => {
     }
 }
 
+const allTours = async (page: number, limit: number) => {
+    try {
+        const response = await api.get(`/tour/${page}/${limit}`)
+        return response.data
+    }catch(error){
+        console.error(error)
+    }
+}
+
 const tourService = {
-    popularTours
+    popularTours,
+    allTours
 }
 
 export default tourService
