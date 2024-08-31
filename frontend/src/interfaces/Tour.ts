@@ -1,10 +1,10 @@
 import { Category } from "./Category"
+import { Destination } from "./Destination"
 import { Review } from "./Review"
 
 export interface Tour{
     id?: number
     name: string
-    country: string
     city: string
     start_date: string
     end_date: string
@@ -14,4 +14,5 @@ export interface Tour{
     reviewCount: number
     reviews?: Review[]
     category?: Category
+    Destination?: Destination
 }

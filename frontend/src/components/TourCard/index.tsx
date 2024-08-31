@@ -2,11 +2,12 @@ import Grade from '../Grade'
 import styles from './style.module.css'
 import Heart from '../../assets/heart.png'
 import Clock from '../../assets/clock.png'
+import { Destination } from '../../interfaces/Destination'
 
 interface TourCardProps {
   image: string
   city: string
-  country: string
+  destination?: Destination
   tour: string
   grade: number
   reviews: number
@@ -14,7 +15,8 @@ interface TourCardProps {
   cost: number
 }
 
-function TourCard({ image, tour, grade, reviews, duration, cost, city, country }:TourCardProps) {
+function TourCard({ image, tour, grade, reviews, duration, cost, city, destination }:TourCardProps) {
+  
   return (
     <div className={styles.cardContainer}>
         <div className={styles.imageContainer}>
@@ -24,7 +26,7 @@ function TourCard({ image, tour, grade, reviews, duration, cost, city, country }
           <img src={image} alt={`image from ${tour}`} className={styles.image}/>
         </div>
         <div className={styles.infoContainer}>
-            <p>{city}, {country}</p>
+            <p>{city}, {destination?.name || 'not'}</p>
             <h3 className={styles.tourName}>{tour}</h3>
             <div className={styles.infoRow}>
                 <div className={styles.gradeRow}>

@@ -30,7 +30,7 @@ export const tourController = {
 
     async listPopular(req: Request, res: Response): Promise<void> {
         try{
-            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}, include: [Review, Category, Destination]})
+            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5, 6, 7, 8]}, include: [Review, Category, Destination]})
             const toursReviews = tours.map(tour => ({
                 ...tour.toJSON(),
                 reviewCount: tour.Reviews?.length || 0
