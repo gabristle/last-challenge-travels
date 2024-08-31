@@ -1,4 +1,5 @@
 import Category from '../models/Category'
+import Destination from '../models/Destination'
 import Review from '../models/Review'
 import Tour from '../models/Tour'
 import { Request, Response } from 'express'
@@ -12,7 +13,7 @@ export const tourController = {
             const tours = await Tour.findAll({
                 limit: limit,
                 offset: offset,
-                include: [Review, Category]
+                include: [Review, Category, Destination]
             })
             const toursReviews = tours.map(tour => ({
                 ...tour.toJSON(),
@@ -29,7 +30,7 @@ export const tourController = {
 
     async listPopular(req: Request, res: Response): Promise<void> {
         try{
-            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}, include: [Review, Category]})
+            const tours = await Tour.findAll({ where: {id: [1, 2, 3, 4, 5]}, include: [Review, Category, Destination]})
             const toursReviews = tours.map(tour => ({
                 ...tour.toJSON(),
                 reviewCount: tour.Reviews?.length || 0
@@ -42,12 +43,16 @@ export const tourController = {
 
     async add(req: Request, res: Response): Promise<Response> {
         try{
-            const { name, country, city, start_date, end_date, duration, costPerPerson, categoryId } = req.body
+            const { name, city, start_date, end_date, duration, costPerPerson, categoryId, destinationId } = req.body
             const category = await Category.findByPk(categoryId)
+            const destination = await Category.findByPk(destinationId)
             if(!category) {
                 return res.status(400).json({message: 'Category not found!'})
             }
-            const tour = await Tour.create({ name, country, city, start_date, end_date, duration, costPerPerson, averageGrade : 0, categoryId})
+            if(!destination) {
+                return res.status(400).json({message: 'Destination not found!'})
+            }
+            const tour = await Tour.create({ name, city, start_date, end_date, duration, costPerPerson, averageGrade : 0, categoryId, destinationId})
             return res.status(200).json(tour)
         } catch(error) {
             return res.status(400).json({ message: error})
@@ -58,7 +63,7 @@ export const tourController = {
         try {
             const tourId = parseInt(req.params.id, 10)
             const tour = await Tour.findByPk(tourId, {
-                include: [Review]
+                include: [Review, Category, Destination]
             })
             if(tour) {
                 return res.status(200).json(tour)

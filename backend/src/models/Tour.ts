@@ -2,11 +2,11 @@ import { DataTypes, Model } from 'sequelize'
 import sequelize from '../database/db-config'
 import Category from './Category'
 import Review from './Review'
+import Destination from './Destination'
 
 class Tour extends Model {
   declare id: number
   name!: string
-  country!: string
   city!: string
   start_date!: string
   end_date!: string
@@ -15,6 +15,7 @@ class Tour extends Model {
   costPerPerson!: number
   declare Reviews?: Review[]
   declare Category?: Category
+  declare Destination?: Destination
 }
   
 Tour.init(
@@ -26,10 +27,6 @@ Tour.init(
         allowNull: false
       },
       name: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      country: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -69,4 +66,8 @@ Category.hasMany(Tour, { foreignKey: 'categoryId'})
 
 Review.belongsTo(Tour, { foreignKey: 'tourId'})
 Tour.hasMany(Review, { foreignKey: 'tourId'})
+
+Tour.belongsTo(Destination, { foreignKey: 'destinationId', constraints: true})
+Destination.hasMany(Tour, { foreignKey: 'destinationId', constraints: true})
+
 export default Tour
