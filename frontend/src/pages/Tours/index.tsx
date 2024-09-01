@@ -132,9 +132,19 @@ function Tours() {
             </div>
             <div className={styles.paginationButtons}>
               <PaginationButton onClick={() => handlePagination(currentPage-1)}>{'<'}</PaginationButton>
-              {currentPage > 1 && <PaginationButton onClick={() => handlePagination(currentPage-1)}>{currentPage-1}</PaginationButton>}
-              <PaginationButton onClick={() => handlePagination(currentPage)}>{currentPage}</PaginationButton>
-              {currentPage < 4 && <PaginationButton onClick={() => handlePagination(currentPage+1)}>{currentPage+1}</PaginationButton>}
+              { currentPage == 1 ?
+                <>
+                  <PaginationButton onClick={() => handlePagination(currentPage)}>{currentPage}</PaginationButton>
+                  <PaginationButton onClick={() => handlePagination(currentPage+1)}>{currentPage+1}</PaginationButton>
+                  <PaginationButton onClick={() => handlePagination(currentPage+2)}>{currentPage+2}</PaginationButton>
+                </>
+                :
+                <>
+                  {currentPage < 4 ? <PaginationButton onClick={() => handlePagination(currentPage-1)}>{currentPage-1}</PaginationButton> : <PaginationButton onClick={() => handlePagination(currentPage-2)}>{currentPage-2}</PaginationButton>} 
+                  {currentPage < 4 ? <PaginationButton onClick={() => handlePagination(currentPage)}>{currentPage}</PaginationButton> : <PaginationButton onClick={() => handlePagination(currentPage-1)}>{currentPage-1}</PaginationButton>}
+                  {currentPage < 4 ? <PaginationButton onClick={() => handlePagination(currentPage+1)}>{currentPage+1}</PaginationButton> : <PaginationButton onClick={() => handlePagination(currentPage)}>{currentPage}</PaginationButton>}
+                </>
+              }
               <PaginationButton onClick={() => handlePagination(currentPage+1)}>{'>'}</PaginationButton>
             </div>
           </section>
