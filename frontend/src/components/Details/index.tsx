@@ -3,30 +3,32 @@ import localization from '../../assets/localization.png'
 import favorite from '../../assets/favorite.png'
 import pinkStar from '../../assets/pinkStar.png'
 import share from '../../assets/share.png'
+import { Destination } from '../../interfaces/Destination'
+import { Category } from '../../interfaces/Category'
 
 interface DetailsProps {
     city: string
-    country: string
+    destination? : Destination
     tour: string
     costPerPerson: number
     duration: number
     maxPeople: number
     minAge: number
-    type: string
+    category?: Category
     grade: number
-    reviews: number
+    reviewCount: number
 }
 
-function Details({ city, country, tour, costPerPerson, duration, maxPeople, minAge, type, grade, reviews }: DetailsProps) {
+function Details({ city, destination, tour, costPerPerson, duration, maxPeople, minAge, category, grade, reviewCount }: DetailsProps) {
   return (
     <div className={styles.detailsContainer}>
         <div className={styles.actionsRow}>
             <div className={styles.localization}>
                 <div className={styles.localizationRow}>
                     <img src={localization} alt="location icon" className={styles.icon}/>
-                    <p>{city}, {country}</p>
+                    <p>{city}, {destination?.name || ''}</p>
                 </div>
-                <a href="">View on map</a>
+                <a href="#mapAddress">View on map</a>
             </div>
             <div className={styles.actions}>
                 <img src={share} alt="share icon" className={styles.icon}/>
@@ -54,13 +56,13 @@ function Details({ city, country, tour, costPerPerson, duration, maxPeople, minA
             </div>
             <div className={styles.detailContainer}>
                 <p>Tour Type</p>
-                <p>{type}</p>
+                <p>{category?.name}</p>
             </div>
             <div className={styles.detailContainer}>
                 <p>Reviews</p>
                 <div className={styles.reviewRow}>
                     <img src={pinkStar} alt="star icon" className={styles.starIcon}/>
-                    <p>{grade}.0 <span>({reviews} reviews)</span></p>
+                    <p>{grade} <span>({reviewCount} reviews)</span></p>
                 </div>
             </div>
         </div>

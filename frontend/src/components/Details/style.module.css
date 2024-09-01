@@ -1,7 +1,7 @@
 .detailsContainer {
     display: flex;
     flex-direction: column;
-    width: 770px;
+    width: 100%;
     gap: 1rem;
 }
 

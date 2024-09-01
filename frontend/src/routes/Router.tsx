@@ -15,7 +15,7 @@ function Router() {
         </Route>
         <Route element={<PrivateRoutes/>}>
           <Route path="/tours" element={<Tours />}/>
-          <Route path="/tour/:name" element={<Tour />}/>
+          <Route path="/tour/:id" element={<Tour />}/>
         </Route>
         <Route path="/" element={<Home />}/>
         <Route path="*" element={<Error />}/>
