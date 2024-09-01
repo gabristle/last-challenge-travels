@@ -3,6 +3,7 @@ import styles from './style.module.css'
 import Heart from '../../assets/heart.png'
 import Clock from '../../assets/clock.png'
 import { Destination } from '../../interfaces/Destination'
+import { useNavigate } from 'react-router-dom'
 
 interface TourCardProps {
   image: string
@@ -13,12 +14,18 @@ interface TourCardProps {
   reviews: number
   duration: number
   cost: number
+  id?: number
 }
 
-function TourCard({ image, tour, grade, reviews, duration, cost, city, destination }:TourCardProps) {
-  
+function TourCard({ image, tour, grade, reviews, duration, cost, city, destination, id }:TourCardProps) {
+  const navigate = useNavigate()
+
+  function handleNavigate(){
+    navigate(`/tour/${id}`)
+  }
+
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer} onClick={handleNavigate}>
         <div className={styles.imageContainer}>
           <div className={styles.heartContainer}>
             <img src={Heart} alt="heart icon" className={styles.heartIcon}/>

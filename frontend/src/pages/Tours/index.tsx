@@ -125,7 +125,7 @@ function Tours() {
               {tours?.map((tour: Tour, index: number) => {
                 return ( 
                   <div key={index}>    
-                    <TourCard image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
+                    <TourCard id={tour.id} image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
                   </div>    
                 )
               })}
