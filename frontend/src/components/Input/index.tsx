@@ -10,13 +10,15 @@ interface InputProps {
     pattern?: string
     icon?: string | null
     className?: string
+    title?: string
+    required?: boolean
 }
-
-function Input({type = 'text', placeholder, icon = null, onChange, name, id, pattern, className}: InputProps) {
+    
+function Input({type = 'text', placeholder, icon = null, onChange, name, id, pattern, className, title, required = false}: InputProps) {
   return (
     <div className={`${styles.inputContainer} ${className}`}>
         {icon && <img src={icon} className={styles.inputIcon}/>}
-        <input type={type} placeholder={placeholder} onChange={onChange} name={name} id={id} pattern={pattern} className={styles.input}></input>
+        <input type={type} placeholder={placeholder} onChange={onChange} name={name} id={id} pattern={pattern} className={styles.input} title={title} required></input>
     </div>
   )
 }

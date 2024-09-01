@@ -6,10 +6,26 @@ import logoDark from '../../assets/logoTrisogDark.png'
 import linkedin from '../../assets/linkedin-white.png'
 import twitter from '../../assets/twitter-white.png'
 import facebook from '../../assets/facebook.png'
+import { useState } from 'react'
 
 function Footer() {
-    function handleChange(){
+    const [errorMessage, setErrorMessage] = useState<string>()
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        setErrorMessage('')
+        const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
+        const value = e.target.value
+        if(value == ''){
+            setErrorMessage('')
+        }
+        const test = regex.test(value)
+        setTimeout(() => {
+            if(!test){
+                setErrorMessage('Insert a valid email')
+            }else {
+                setErrorMessage('')
+            }
+        }, 2500)
     }
 
   return (
@@ -60,8 +76,11 @@ function Footer() {
             <div className={styles.signUpContainer}>
                 <h2 className={styles.title}>Sign up Newsletter</h2>
                 <div className={styles.signUp}>
-                    <Input placeholder={'Enter email...'} onChange={handleChange} icon={paperPlane}/>
-                    <Button>Submit</Button>
+                    <form className={styles.signUp}>
+                        {errorMessage && <p>{errorMessage}</p>}
+                        <Input placeholder={'Enter email...'} onChange={handleChange} icon={paperPlane} title={'Please enter a valid email'} required/>
+                        <Button type={'submit'}>Submit</Button>
+                    </form>
                 </div>
             </div>
             <p className={styles.copyright}>©️ 2023 Trisog All Right Reserved</p>
