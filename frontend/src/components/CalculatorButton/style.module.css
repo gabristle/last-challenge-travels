@@ -11,4 +11,9 @@
     font-size: 1rem;
     font-weight: 600;
     font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--gray);
 }

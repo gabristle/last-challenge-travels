@@ -16,6 +16,7 @@ import { Review } from '../../interfaces/Review'
 import AverageReviews from '../../components/AverageReviews'
 import ratingService from '../../services/rating/ratingService'
 import { Rating } from '../../interfaces/Rating'
+import Calculator from '../../components/Calculator'
 
 function TourDetails() {
   const { id } = useParams<string>()
@@ -78,7 +79,9 @@ function TourDetails() {
               <ReviewForm></ReviewForm>
             </section>
           </section>
-          <aside className={styles.calculatorSection}>Calculator</aside>
+          <aside className={styles.calculatorSection}>
+            <Calculator cost={tour.costPerPerson} duration={tour.duration}></Calculator>
+          </aside>
         </div>
         <h1 className={styles.sectionTitle}>You may also like...</h1>
         <section className={styles.suggestion}>
