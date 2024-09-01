@@ -12,7 +12,7 @@ export interface Tour{
     duration: number
     costPerPerson: number
     reviewCount: number
-    reviews?: Review[]
-    category?: Category
+    Reviews?: Review[]
+    Category?: Category
     Destination?: Destination
 }

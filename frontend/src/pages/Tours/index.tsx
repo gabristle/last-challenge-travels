@@ -35,8 +35,9 @@ function Tours() {
     getTours(currentPage)
   }, [currentPage])
 
-  function handlePaginationClick(value: number) {
-    setCurrentPage(value)
+  function handlePagination(value: number) {
+    value > totalPages || value < 1 ? setCurrentPage(currentPage) : setCurrentPage(value)
+
   }
 
   return (
@@ -130,11 +131,11 @@ function Tours() {
               })}
             </div>
             <div className={styles.paginationButtons}>
-              <PaginationButton onClick={() => handlePaginationClick(currentPage-1)}>{'<'}</PaginationButton>
-              {Array.from({length: totalPages}, (_, index) => (
-                <PaginationButton key={index+1} onClick={() => handlePaginationClick(index+1)}>{index+1}</PaginationButton>
-              ))}
-              <PaginationButton onClick={() => handlePaginationClick(currentPage+1)}>{'>'}</PaginationButton>
+              <PaginationButton onClick={() => handlePagination(currentPage-1)}>{'<'}</PaginationButton>
+              {currentPage > 1 && <PaginationButton onClick={() => handlePagination(currentPage-1)}>{currentPage-1}</PaginationButton>}
+              <PaginationButton onClick={() => handlePagination(currentPage)}>{currentPage}</PaginationButton>
+              {currentPage < 4 && <PaginationButton onClick={() => handlePagination(currentPage+1)}>{currentPage+1}</PaginationButton>}
+              <PaginationButton onClick={() => handlePagination(currentPage+1)}>{'>'}</PaginationButton>
             </div>
           </section>
         </section>

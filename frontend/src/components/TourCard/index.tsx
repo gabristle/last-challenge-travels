@@ -26,7 +26,7 @@ function TourCard({ image, tour, grade, reviews, duration, cost, city, destinati
           <img src={image} alt={`image from ${tour}`} className={styles.image}/>
         </div>
         <div className={styles.infoContainer}>
-            <p>{city}, {destination?.name || 'not'}</p>
+            <p>{city}, {destination?.name || ''}</p>
             <h3 className={styles.tourName}>{tour}</h3>
             <div className={styles.infoRow}>
                 <div className={styles.gradeRow}>

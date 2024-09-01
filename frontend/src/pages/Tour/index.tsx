@@ -3,41 +3,78 @@ import HelloLogout from '../../components/HelloLogout'
 import mainImg from '../../assets/mainImage.png'
 import Details from '../../components/Details'
 import styles from './style.module.css'
-import AverageReviews from '../../components/AverageReviews'
 import ReviewCard from '../../components/ReviewCard'
 import ReviewForm from '../../components/ReviewForm'
 import PopularToursCaroussel from '../../components/PopularToursCaroussel'
 import Footer from '../../components/Footer'
+import { useNavigate, useParams } from 'react-router-dom'
+import TourImage from '../../components/TourImage'
+import { useEffect, useState } from 'react'
+import tourService from '../../services/tour/tourService'
+import { Tour } from '../../interfaces/Tour'
+import { Review } from '../../interfaces/Review'
+import AverageReviews from '../../components/AverageReviews'
+import ratingService from '../../services/rating/ratingService'
+import { Rating } from '../../interfaces/Rating'
 
+function TourDetails() {
+  const { id } = useParams<string>()
+  const tourId = Number(id)
+  const [tour, setTour] = useState<Tour>()
+  const [averageGrades, setAverageGrades] = useState<Rating>()
+  const navigate = useNavigate()
 
-function Tour() {
+  function handleNavigate(){
+    navigate('/tours')
+  }
+
+  useEffect(() => {
+    const getTour = async (id: number) => {
+      try{
+        const data = await tourService.tourById(id)
+        const gradesData = await ratingService.ratingData(id)
+        setTour(data)
+        setAverageGrades(gradesData)
+      }catch(error){
+        handleNavigate()
+        console.error(error)
+      }
+    }
+
+    getTour(tourId)
+  }, [tour?.Reviews])
 
   return (
     <>
       <Header>
           <HelloLogout/>
       </Header>
+      {tour &&
       <main className={styles.main}>
         <div className={styles.mainSections}>
           <section className={styles.mainSection}>
             <section className={styles.detailsSection}>
-              <img src={mainImg} alt="" className={styles.mainImage}/>
-              <Details city={'Cologne'} country={'Germany'} tour={'Cologne Cathedral'} costPerPerson={512} duration={7} maxPeople={25} minAge={5} type={'Art'} reviews={12} grade={4}></Details>
+              <TourImage image={mainImg} className={styles.mainImage} tourName={tour?.name}></TourImage>
+              <Details city={tour.city} destination={tour.Destination} tour={tour.name} costPerPerson={tour.costPerPerson} duration={tour.duration} maxPeople={25} minAge={5} category={tour.Category} reviewCount={tour.Reviews?.length || 0} grade={Math.ceil(tour.averageGrade)}></Details>
               <h2 className={styles.title}>Overview</h2>
               <p className={styles.detailsText}>Istanbul, the vibrant and historic city straddling the continents of Europe and Asia, offers an enchanting blend of cultures, sights, and experiences that captivate every traveler's heart. As Turkey's cultural and economic hub, Istanbul seamlessly fuses its rich heritage with modernity, creating an unforgettable journey for visitors.</p>
               <p className={styles.detailsText}>The City is home to some of the world's most iconic landmarks, including the awe-inspiring Hagia Sophia, the majestic Blue Mosque, and the grand Topkapi Palace, each bearing witness to Istanbul's illustrious past. Wandering through the bustling streets, you'll find an array of delightful bazaars, where you can haggle for unique souvenirs, immerse yourself in the aromatic spices, and savor traditional Turkish delights.</p>
             </section>
             <section>
-              <h2 className={styles.title}>Map</h2>
+              <h2 className={styles.title} id={'mapAddress'}>Map</h2>
           
             </section>
             <section className={styles.averageReviews}>
               <h2 className={styles.title}>Average Reviews</h2>
-              <AverageReviews></AverageReviews>
+              {averageGrades && <AverageReviews rating={averageGrades} averageGrade={tour?.averageGrade}></AverageReviews>}
             </section>
             <section className={styles.reviews}>
-              <h3 className={styles.subtitle}>Showing 1 review</h3>
-              <ReviewCard date={'March 20, 2024'} author={'Anonimo'} reviews={1}>Objectively productivate just in time information with dynamic channels. Energistically exploit seamless growth strategies after 24/7 experiences</ReviewCard>
+              <h3 className={styles.subtitle}>Showing {tour?.Reviews?.length} reviews</h3>
+              {tour.Reviews?.map((review: Review, index:number) => {
+                return (
+                  <ReviewCard key={index} date={'12'} author={review.name_user} reviews={1} grade={Number(review.averageGrade.toFixed())}>{review.message}</ReviewCard>      
+                )
+              })}
               <ReviewForm></ReviewForm>
             </section>
           </section>
@@ -48,9 +85,10 @@ function Tour() {
             <PopularToursCaroussel></PopularToursCaroussel>  
         </section>
       </main>
+      }     
       <Footer></Footer>
     </>
   )
 }
 
-export default Tour
+export default TourDetails

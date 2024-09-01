@@ -10,4 +10,5 @@ export interface Review {
     room: number
     message: string
     averageGrade: number
+    createdAt: string
 }

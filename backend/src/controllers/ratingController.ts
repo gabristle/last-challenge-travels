@@ -22,14 +22,15 @@ export const tourRatingController = {
           const averageRoom = totalReviews > 0 ? reviews.reduce((sum, r) => sum + r.room, 0) / totalReviews : 0
           const averageLocations = totalReviews > 0 ? reviews.reduce((sum, r) => sum + r.locations, 0) / totalReviews : 0
           const averageAmenities = totalReviews > 0 ? reviews.reduce((sum, r) => sum + r.amenities, 0) / totalReviews : 0
+          const averagePrices = totalReviews > 0 ? reviews.reduce((sum, r) => sum + r.prices, 0) / totalReviews : 0
     
           return res.status(200).json({
-            ...tour.toJSON(),
             averageService,
             averageFood,
             averageRoom,
             averageLocations,
-            averageAmenities
+            averageAmenities,
+            averagePrices
           })
         } catch (error) {
           return res.status(500).json({ message: error })

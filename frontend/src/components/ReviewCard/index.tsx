@@ -7,9 +7,10 @@ interface ReviewCardProps {
     author: string
     reviews: number
     children: ReactNode
+    grade: number
 }
 
-function ReviewCard({ date, author, reviews, children } : ReviewCardProps) {
+function ReviewCard({ date, author, reviews, children, grade } : ReviewCardProps) {
   return (
     <div className={styles.reviewCard}>
         <div>
@@ -19,7 +20,7 @@ function ReviewCard({ date, author, reviews, children } : ReviewCardProps) {
             <p className={styles.date}>September {date}, 2024</p>
             <h3 className={styles.author}>{author}</h3>
             <div className={styles.reviewRow}>
-                <Grade grade={5}/>
+                <Grade grade={grade}/>
                 <p className={styles.reviews}>{reviews} reviews</p>
             </div>
             <p className={styles.comment}>{children}</p>
