@@ -46,7 +46,7 @@ function PopularToursCaroussel() {
                 {tours?.map((tour: Tour, index) => {
                     return (
                         <li key={index} className='splide__slide'>
-                            <TourCard image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
+                            <TourCard id={tour.id} image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
                         </li>
                     )
                 })}

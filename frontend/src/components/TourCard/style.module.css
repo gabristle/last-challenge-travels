@@ -1,6 +1,12 @@
 .cardContainer {
     width: 270px;
     background-color: var(--ligth-gray);
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.cardContainer:hover{
+    transform: scale(1.025);
 }
 
 .imageContainer {

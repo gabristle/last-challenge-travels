@@ -82,7 +82,7 @@ function TourDetails() {
         </div>
         <h1 className={styles.sectionTitle}>You may also like...</h1>
         <section className={styles.suggestion}>
-            <PopularToursCaroussel></PopularToursCaroussel>  
+          <PopularToursCaroussel></PopularToursCaroussel>  
         </section>
       </main>
       }     
