@@ -1,0 +1,145 @@
+.calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ligth-gray);
+    padding: 1.8rem;
+}
+
+.costParagraph {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cost {
+    font-size: 32px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-bottom: 1.3rem;
+}
+
+.label {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.age {
+    font-size: 14px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.totalCost {
+    font-size: 24px;
+    color: var(--pink);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.calculatorRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 4.3rem;
+    align-items: center;
+}
+
+.buttonsRow {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.datePlaceholder {
+    background-color: var(--white);
+    font-size: 1rem;
+    color: var(--hints);
+    width: 200px;
+    position: absolute;
+    z-index: 999;
+    top: 2.4rem;
+    left: 1rem;
+}
+
+.calendarIcon {
+    position: absolute;
+    height: 24px;
+    bottom: 0.6rem;
+    right: 0.6rem;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.select {
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    padding: 0.7rem 0rem 0.7rem 0.8rem;
+    border: none;
+    width: 100%;
+    font-weight: 400;
+    border-radius: 5px;
+    color: var(--hints);
+    border: 1px solid var(--gray);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--white) url(../../assets/bottomLigth.png) 95.5% no-repeat;
+    background-size: 12px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.childrenCalculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.childrenRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 1rem !important;
+}
+
+.errorMessage {
+    font-size: 12px;
+    color: red;
+    margin-top: 1rem;
+    text-align: center;
+}

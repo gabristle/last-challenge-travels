@@ -3,11 +3,12 @@ import styles from './style.module.css'
 
 interface CalculatorButtonProps {
     children: ReactNode
+    onClick?: () => void
 }
 
-function CalculatorButton({ children }: CalculatorButtonProps) {
+function CalculatorButton({ children, onClick }: CalculatorButtonProps) {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} onClick={onClick}>
         {children}
     </button>
   )
