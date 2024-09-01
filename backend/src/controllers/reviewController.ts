@@ -6,7 +6,8 @@ export const reviewController = {
 
     async add(req: Request, res: Response): Promise<Response> {
         try{
-            const { tourId, name_user, email_user, services, locations, amenities, prices, food, room, message } = req.body
+            const tourId = req.params.id
+            const { name_user, email_user, services, locations, amenities, prices, food, room, message } = req.body
             const tour = await Tour.findByPk(tourId)
             const grade = (services + locations + amenities + prices + food + room)/6
             if(!tour){

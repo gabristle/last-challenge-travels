@@ -78,7 +78,7 @@ function Footer() {
                 <div className={styles.signUp}>
                     <form className={styles.signUp}>
                         {errorMessage && <p>{errorMessage}</p>}
-                        <Input placeholder={'Enter email...'} onChange={handleChange} icon={paperPlane} title={'Please enter a valid email'} required/>
+                        <Input placeholder={'Enter email...'} onChange={handleChange} icon={paperPlane} title={'Please enter a valid email'}/>
                         <Button type={'submit'}>Submit</Button>
                     </form>
                 </div>

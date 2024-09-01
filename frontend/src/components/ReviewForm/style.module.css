@@ -59,3 +59,9 @@
     height: 80px;
     resize: none;
 }
+
+.formInputs Button {
+    height: 55px;
+    width: 25%;
+    font-size: 1rem;
+}

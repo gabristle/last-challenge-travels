@@ -11,10 +11,9 @@ interface InputProps {
     icon?: string | null
     className?: string
     title?: string
-    required?: boolean
 }
     
-function Input({type = 'text', placeholder, icon = null, onChange, name, id, pattern, className, title, required = false}: InputProps) {
+function Input({type = 'text', placeholder, icon = null, onChange, name, id, pattern, className, title}: InputProps) {
   return (
     <div className={`${styles.inputContainer} ${className}`}>
         {icon && <img src={icon} className={styles.inputIcon}/>}

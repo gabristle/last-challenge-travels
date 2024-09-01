@@ -1,15 +1,16 @@
 .main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     width: 100%;
     justify-content: center;
+    margin-top: 4rem;
 }
 
 .mainSections {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .mainSection {
