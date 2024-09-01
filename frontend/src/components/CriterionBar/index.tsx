@@ -12,9 +12,9 @@ function CriterionBar({ value, criterion }: CriterionBarProps) {
         <p className={styles.criterion}>{criterion}</p>
         <div className={styles.barRow}>
             <div className={styles.bar}>
-                <div className={styles.valueBar} style={{width: `${value}%`}}></div>
+                <div className={styles.valueBar} style={{width: `${value*10}%`}}></div>
             </div>
-            <p className={styles.value}>{value}</p>
+            <p className={styles.value}>{value}.0</p>
         </div>
     </div>
   )

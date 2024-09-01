@@ -9,6 +9,6 @@ export interface Review {
     food: number
     room: number
     message: string
-    averageGrade: number
-    createdAt: string
+    averageGrade?: number
+    createdAt?: string
 }

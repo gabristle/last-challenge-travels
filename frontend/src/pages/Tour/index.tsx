@@ -17,6 +17,7 @@ import AverageReviews from '../../components/AverageReviews'
 import ratingService from '../../services/rating/ratingService'
 import { Rating } from '../../interfaces/Rating'
 import Calculator from '../../components/Calculator'
+import reviewService from '../../services/review/reviewServices'
 
 function TourDetails() {
   const { id } = useParams<string>()
@@ -24,6 +25,7 @@ function TourDetails() {
   const [tour, setTour] = useState<Tour>()
   const [averageGrades, setAverageGrades] = useState<Rating>()
   const navigate = useNavigate()
+  const [seed, setSeed] = useState(1);
 
   function handleNavigate(){
     navigate('/tours')
@@ -43,7 +45,18 @@ function TourDetails() {
     }
 
     getTour(tourId)
-  }, [tour?.Reviews])
+  }, [tourId])
+
+  const handleSubmit = async (newReview: Review) => {
+    try{
+      await reviewService.addReview(tourId, newReview)
+      const data = await tourService.tourById(tourId)
+      setTour(data)
+      setSeed(Math.random());
+    }catch(error){
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -73,10 +86,10 @@ function TourDetails() {
               <h3 className={styles.subtitle}>Showing {tour?.Reviews?.length} reviews</h3>
               {tour.Reviews?.map((review: Review, index:number) => {
                 return (
-                  <ReviewCard key={index} date={'12'} author={review.name_user} reviews={1} grade={Number(review.averageGrade.toFixed())}>{review.message}</ReviewCard>      
+                  <ReviewCard key={index} date={'12'} author={review.name_user} reviews={1} grade={Number(review.averageGrade?.toFixed())}>{review.message}</ReviewCard>      
                 )
               })}
-              <ReviewForm></ReviewForm>
+              <ReviewForm key={seed} submit={handleSubmit}></ReviewForm>
             </section>
           </section>
           <aside className={styles.calculatorSection}>

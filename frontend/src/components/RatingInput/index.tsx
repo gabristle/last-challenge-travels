@@ -3,15 +3,21 @@ import styles from './style.module.css'
 
 interface RatingInputProps {
     criterion: string
+    ratingChange: (value: number) => void
 }
 
-function RatingInput({ criterion }: RatingInputProps) {
+function RatingInput({ criterion, ratingChange }: RatingInputProps) {
     const [rating, setRating] = useState<number>(0);
     const starsArray = [1, 2, 3, 4, 5];
 
     function handleClick(starIndex: number){
-        setRating(starIndex);
+        const ratingValue = (starIndex)
+        setRating(ratingValue)
+        if(ratingChange){
+            ratingChange(ratingValue)
+        }
     };
+
   return (
     <div>
         <p className={styles.criterion}>{criterion}</p>

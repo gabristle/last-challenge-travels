@@ -3,7 +3,7 @@ import { reviewController } from '../controllers/reviewController'
 
 const router = express.Router()
 
-router.post('/', reviewController.add)
+router.post(`/:id`, reviewController.add)
 
 router.delete('/:id', reviewController.delete)
 
