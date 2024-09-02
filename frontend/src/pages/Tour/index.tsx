@@ -18,6 +18,8 @@ import ratingService from '../../services/rating/ratingService'
 import { Rating } from '../../interfaces/Rating'
 import Calculator from '../../components/Calculator'
 import reviewService from '../../services/review/reviewServices'
+import MapComponent from '../../components/Map'
+import { APIProvider } from '@vis.gl/react-google-maps'
 
 function TourDetails() {
   const { id } = useParams<string>()
@@ -25,7 +27,7 @@ function TourDetails() {
   const [tour, setTour] = useState<Tour>()
   const [averageGrades, setAverageGrades] = useState<Rating>()
   const navigate = useNavigate()
-  const [seed, setSeed] = useState(1);
+  const [seed, setSeed] = useState(1)
 
   function handleNavigate(){
     navigate('/tours')
@@ -76,7 +78,9 @@ function TourDetails() {
             </section>
             <section>
               <h2 className={styles.title} id={'mapAddress'}>Map</h2>
-          
+              <APIProvider apiKey={"AIzaSyBWA5xuEmbqnw-_DHBhrSSW_6OGXLWYOJw"}>
+                {tour.Destination && <MapComponent city={tour.city} country={tour.Destination?.name}></MapComponent>}  
+              </APIProvider>
             </section>
             <section className={styles.averageReviews}>
               <h2 className={styles.title}>Average Reviews</h2>
@@ -86,7 +90,7 @@ function TourDetails() {
               <h3 className={styles.subtitle}>Showing {tour?.Reviews?.length} reviews</h3>
               {tour.Reviews?.map((review: Review, index:number) => {
                 return (
-                  <ReviewCard key={index} date={'12'} author={review.name_user} reviews={1} grade={Number(review.averageGrade?.toFixed())}>{review.message}</ReviewCard>      
+                  <ReviewCard key={index} date={review.createdAt ? review.createdAt : ''} author={review.name_user} reviews={1} grade={Number(review.averageGrade?.toFixed())}>{review.message}</ReviewCard>      
                 )
               })}
               <ReviewForm key={seed} submit={handleSubmit}></ReviewForm>
