@@ -9,14 +9,14 @@
 
 .mainContent {
     background-color: var(--white);
-    border: 5px var(--subdued) dashed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 300px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 2rem;
     gap: 1rem;
 }
