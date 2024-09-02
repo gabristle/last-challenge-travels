@@ -123,8 +123,8 @@ function Home() {
           <img src={travelIcon4} alt="" className={styles.travelIcon4}/>
           <img src={travelIcon5} alt="" className={styles.travelIcon5}/>
         </section>
-        <Footer></Footer>
       </main>
+      <Footer></Footer>
     </>
   )
 }
