@@ -29,21 +29,21 @@ const tourById = async (id: number) => {
 
 const filtredTours = async (params: {
     name?: string
-    categoriesId?: number[]
+    categoriesId?: string
     maxCost?: number
-    destinationsId?: number[]
-    grades?: number[]
+    destinationsId?: string
+    grades?: string
+    sort?: string
 }) => {
     try {
         const queryParams = new URLSearchParams()
+
         if(params.name){
             queryParams.append('name', params.name)
         }
 
         if(params.categoriesId) {
-            params.categoriesId.forEach((id) => {
-                queryParams.append('categoriesId', id.toString())
-            })
+            queryParams.append('categoriesId', params.categoriesId)
         }
 
         if(params.maxCost){
@@ -51,16 +51,17 @@ const filtredTours = async (params: {
         }
 
         if(params.destinationsId){
-            params.destinationsId.forEach((id) => {
-                queryParams.append('destinationsId', id.toString())
-            })
+            queryParams.append('destinationsId', params.destinationsId)
         }
 
         if(params.grades){
-            params.grades.forEach((grade) => {
-                queryParams.append('grades', grade.toString())
-            })
+            queryParams.append('grades', params.grades)
         }
+
+        if(params.sort) {
+            queryParams.append('sort', params.sort)
+        }
+
         const response = await api.get(`/tour/search?${queryParams.toString()}`)
         return response.data                                                                                                                       
     }catch(error){

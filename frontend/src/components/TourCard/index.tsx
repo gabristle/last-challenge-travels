@@ -15,7 +15,7 @@ interface TourCardProps {
   id?: number
 }
 
-function TourCard({ image, tour, grade, reviews, duration, cost, city, destination, id }:TourCardProps) {
+function TourCard({ image, tour, grade, reviews = 0, duration, cost, city, destination, id }:TourCardProps) {
   const navigate = useNavigate()
 
   function handleNavigate(){

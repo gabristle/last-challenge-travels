@@ -9,8 +9,19 @@ const destinationDetails = async (id: number) => {
     }
 }
 
+const allDestinations = async () => {
+    try{
+        const response = await api.get(`/destination/`)
+        return response.data
+    }catch(error){
+        console.error(error);
+    }
+}
+
+
 const destinationService = {
-    destinationDetails
+    destinationDetails,
+    allDestinations
 }
 
 export default destinationService
