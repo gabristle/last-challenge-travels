@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import userIcon from '../../assets/user.png'
+
 import { useNavigate } from 'react-router-dom'
 
 function LoginSignup() {
@@ -11,7 +11,7 @@ function LoginSignup() {
 
   return (
     <div className={styles.container} onClick={handleClick}>
-        <img src={userIcon} alt="user icon" className={styles.icon}/>
+        <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/user.png?alt=media&token=560e6963-fd56-4d65-aad1-2bddea9a62de'} alt="user icon" className={styles.icon}/>
         <p>Login / Signup</p>
     </div>
   )

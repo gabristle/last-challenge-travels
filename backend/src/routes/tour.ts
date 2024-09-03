@@ -5,6 +5,10 @@ const router = express.Router()
 
 router.get('/:page/:limit', tourController.list)
 
+router.get('/', tourController.listAll)
+
+router.get('/search', tourController.findTours)
+
 router.get('/popular', tourController.listPopular)
 
 router.get('/:id', tourController.listById)

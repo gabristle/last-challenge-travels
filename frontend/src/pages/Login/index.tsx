@@ -1,12 +1,7 @@
-import logo from '../../assets/logoTrisog.png'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 import styles from './style.module.css'
-import googleIcon from '../../assets/google.png'
-import facebookIcon from '../../assets/facebook.png'
 import { useNavigate } from 'react-router-dom'
-import mailIcon from '../../assets/mail.png'
-import lockIcon from '../../assets/lock.png'
 import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../services/firebase/firebaseConfig'
@@ -68,17 +63,17 @@ function Login() {
       <section className={styles.loginSection}>
         <button className={styles.backButton} onClick={handleBack}>Back to home</button>
         <div className={styles.login}>
-          <img src={logo} alt="trisog logo" className={styles.logo}/>
+          <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/logoTrisog.png?alt=media&token=1117d9a5-7455-458d-b051-272ee8efb9e4'} alt="trisog logo" className={styles.logo}/>
           <h1 className={styles.title}>Sign in or Create account</h1>
           <form className={styles.form}>
             <div className={styles.inputs}>
               <div className={styles.input}>
                 <label>Email</label>
-                <Input icon={mailIcon} placeholder={'Enter your email'} onChange={(e) => setEmail(e.target.value)}></Input>
+                <Input icon={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/mail.png?alt=media&token=330caee7-8220-4dd2-aab0-cbc5c92cdef8'} placeholder={'Enter your email'} onChange={(e) => setEmail(e.target.value)}></Input>
               </div>
               <div className={styles.input}>
                 <label>Password</label>
-                <Input icon={lockIcon} type={'password'} placeholder={'Enter your password'} onChange={(e) => setPassword(e.target.value)}></Input>
+                <Input icon={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/lock.png?alt=media&token=2e8c5bcc-01ae-4eb8-abc4-dbe25e46397d'} type={'password'} placeholder={'Enter your password'} onChange={(e) => setPassword(e.target.value)}></Input>
               </div>
               {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
               <Button onClick={handleSignIn} className={styles.button}>Sign In</Button>
@@ -90,8 +85,8 @@ function Login() {
               <div className={styles.line}></div>
             </div>
             <div className={styles.socialButtons}>
-              <Button className={`${styles.googleButton} ${styles.button}`} onClick={handleSignInGoogle}><span><img src={googleIcon} alt="google icon" />Google</span></Button>
-              <Button className={`${styles.facebookButton} ${styles.button}`} onClick={handleSignInFacebook}><span><img src={facebookIcon} alt="facebook icon" />Facebook</span></Button>
+              <Button className={`${styles.googleButton} ${styles.button}`} onClick={handleSignInGoogle}><span><img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/google.png?alt=media&token=5b4f67c0-bab3-41cd-825a-c6be47f2b465'} alt="google icon" />Google</span></Button>
+              <Button className={`${styles.facebookButton} ${styles.button}`} onClick={handleSignInFacebook}><span><img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/facebook.png?alt=media&token=9d6414d6-2da1-4294-9d5f-2c77253c2998'} alt="facebook icon" />Facebook</span></Button>
             </div>
           </form>
         </div>

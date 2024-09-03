@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(../../assets/mapBg.jpg);
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/mapBg.jpg?alt=media&token=8fe33400-c8a4-4624-8583-27cb33a42d2e');
     height: 580px;
 }
 

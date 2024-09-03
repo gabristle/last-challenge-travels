@@ -1,5 +1,4 @@
 import styles from './style.module.css'
-import star from '../../assets/star.png'
 
 interface GradeProps {
   grade: number
@@ -8,7 +7,7 @@ interface GradeProps {
 function Grade({ grade }: GradeProps) {
   return (
     <div className={styles.container}>
-        <img src={star} alt="star icon" className={styles.icon}/>
+        <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/star.png?alt=media&token=bd431e1e-a5c2-44ad-8df7-11c8fd0b9fcd'} alt="star icon" className={styles.icon}/>
         <p className={styles.grade}>{grade.toFixed()}</p>
     </div>
   )

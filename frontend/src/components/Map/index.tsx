@@ -13,6 +13,7 @@ interface Coordinates {
 }
 
 function MapComponent({ country, city }: MapProps) {
+    
     const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
 
     const getLocation = async () => {
@@ -41,6 +42,7 @@ function MapComponent({ country, city }: MapProps) {
     getLocation()
 
     return (
+        {/*
         <div className="map-container">
             { coordinates && <>
             <Map
@@ -55,6 +57,7 @@ function MapComponent({ country, city }: MapProps) {
             <AdvancedMarker position={{ lat: coordinates.lat, lng: coordinates.lng}}></AdvancedMarker>
             </>}
         </div>
+        */}
     );
 }
 
