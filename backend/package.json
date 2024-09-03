@@ -7,7 +7,8 @@
     "start": "node ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "add-database": "ts-node src/database/data.ts",
-    "add-tours": "ts-node src/database/addTours.ts"
+    "add-tours": "ts-node src/database/addTours.ts",
+    "add-reviews": "ts-node src/database/addReviews.ts"
   },
   "keywords": [],
   "author": "",
