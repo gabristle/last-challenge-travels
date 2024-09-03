@@ -17,21 +17,41 @@ function Tours() {
   const [countTours, setCountTours] = useState<number>(0)
   const [totalPages, setTotalPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(1)
+  const [name, setName] = useState<string>('')
+  const [categoriesId, setCategoriesId] = useState<number[]>([])
+  const [maxCost, setMaxCost] = useState<number>(0)
+  const [destinationsId, setDestinationsId] = useState<number[]>([])
+  const [grades, setGrades] = useState<number[]>([])
 
   useEffect(() => {
-    const getTours = async (page: number) => {
-      try{
-        const data = await tourService.allTours(page, 9)
-        setTours(data.tours)
-        setCountTours(data.count)
-        setTotalPages(data.totalPages)
-      }catch(error){
-        console.error(error)
+    
+    try{
+      const getTours = async () => {
+        if(name || categoriesId || maxCost || destinationsId || grades){
+          
+            const data = await tourService.filtredTours({
+              name,
+              categoriesId,
+              maxCost,
+              destinationsId,
+              grades
+            })
+            console.log(data)
+            setTours(data)
+            setCountTours(data.count)
+        }else {
+          const data = await tourService.allTours(currentPage, 9)
+          setTours(data.tours)
+          setCountTours(data.count)
+          setTotalPages(data.totalPages)
+        }
       }
+      getTours()
+    }catch(error){
+      console.error(error)
     }
 
-    getTours(currentPage)
-  }, [currentPage])
+  }, [currentPage, name, categoriesId, maxCost, destinationsId, grades])
 
   function handlePagination(value: number) {
     value > totalPages || value < 1 ? setCurrentPage(currentPage) : setCurrentPage(value)
@@ -56,7 +76,7 @@ function Tours() {
           <aside className={styles.filters}>
             <FilterCard title='Search'>
               <div>
-                <input type='text'></input>
+                <input type='text' onChange={(e) => setName(e.target.value)}></input>
                 <img src="" alt="" />
               </div>
             </FilterCard>

@@ -4,4 +4,5 @@ export interface SearchParams {
     maxCost?: number
     destinationsId?: number[] | null
     grades?: number[] | null
+    sort?: 'Title' | 'Cost'
 }
