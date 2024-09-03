@@ -3,7 +3,6 @@ import '@splidejs/splide/css'
 import { useEffect, useState } from 'react'
 import TypeCard from '../TypeCard';
 import { Category } from '../../interfaces/Category'
-import checkIcon from '../../assets/check.png'
 import categoryService from '../../services/category/categoryService'
 import styles from './style.module.css'
 
@@ -44,7 +43,7 @@ function TypeCaroussel() {
             <ul className='splide__list'>
                 {categories?.map((category: Category, index) => {
                     return (
-                        <li key={index} className='splide__slide'><TypeCard icon={checkIcon} category={category.name} tours={category.totalTours} cost={category.cheapestCost}></TypeCard></li>
+                        <li key={index} className='splide__slide'><TypeCard icon={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/check.png?alt=media&token=2f017aef-ec94-4a9f-9ad4-f4bf33f80a73'} category={category.name} tours={category.totalTours} cost={category.cheapestCost}></TypeCard></li>
                     )
                 })}
             </ul>

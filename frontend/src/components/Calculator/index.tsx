@@ -3,7 +3,6 @@ import CalculatorButton from '../CalculatorButton'
 import Input from '../Input'
 import styles from './style.module.css'
 import Button from '../Button'
-import calendarIcon from '../../assets/calendarLigth.png'
 
 interface CalculatorProps {
     cost: number
@@ -80,7 +79,7 @@ function Calculator({ cost, duration }: CalculatorProps) {
                 <label htmlFor='date' className={styles.label}>Date</label>
                 {placeholder && <div className={styles.datePlaceholder}>Choose date</div>}
                 <Input id='date' type='date' placeholder='Choose date' onChange={handleChange} className={styles.dateInput}></Input>
-                <img className={styles.calendarIcon} src={calendarIcon} alt="calendar icon" />
+                <img className={styles.calendarIcon} src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/calendarLigth.png?alt=media&token=29340340-673f-4ee3-8425-ec8e7131eff5'} alt="calendar icon" />
             </div>
             <div className={styles.inputContainer}>
                 <label htmlFor='time' className={styles.label}>Time</label>

@@ -3,6 +3,7 @@ import Destination from '../models/Destination'
 import Review from '../models/Review'
 import Tour from '../models/Tour'
 import { Request, Response } from 'express'
+import sequelize from 'sequelize'
 
 export const tourController = {
     async list(req: Request, res: Response): Promise<void> {
@@ -11,6 +12,7 @@ export const tourController = {
             const limit = parseInt(req.params.limit) || 10
             const offset = (page-1) * limit
             const tours = await Tour.findAll({
+                order: ['name'],
                 limit: limit,
                 offset: offset,
                 include: [Review, Category, Destination]
@@ -26,6 +28,17 @@ export const tourController = {
 
             res.status(200).json({tours: toursReviews, count, totalPages})
         } catch(error) {
+            res.status(400).json({ message: error})
+        }
+    },
+
+    async listAll(req: Request, res: Response) {
+        try{
+            const allTours = await Tour.findAll({
+                order: ['name']
+            })
+            res.status(200).json(allTours)
+        }catch(error){
             res.status(400).json({ message: error})
         }
     },
@@ -73,6 +86,22 @@ export const tourController = {
             return res.status(400).json({ message: 'Tour not found'})
         } catch(error) {
             return res.status(400).json({ message: error})
+        }
+    },
+
+    async findTours(req: Request, res: Response) {
+        try{
+            const { search } = req.query
+            if(search && typeof search === 'string') {
+                const result = await Tour.findAll({
+                    where: sequelize.where(sequelize.fn('LOWER', sequelize.col('name')), 'LIKE', `%${search.toLowerCase()}%`)
+                })
+                res.status(200).json(result)
+                
+            }
+    
+        }catch(error) {
+            res.status(400).json({ message: error})
         }
     },
 

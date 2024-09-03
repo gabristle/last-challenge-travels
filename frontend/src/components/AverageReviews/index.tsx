@@ -1,6 +1,5 @@
 import styles from './style.module.css'
 import CriterionBar from '../CriterionBar'
-import starIcon from '../../assets/star.png'
 import { useEffect, useState } from 'react'
 import { Rating } from '../../interfaces/Rating'
 
@@ -32,7 +31,7 @@ function AverageReviews({ rating, averageGrade }: AverageReviewsProps) {
         <div className={styles.averageContainer}>
             <p className={styles.average}>{averageGrade.toFixed()}.0</p>
             <div className={styles.averageRow}>
-                <img src={starIcon} alt="star icon" className={styles.starIcon}/>
+                <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/star.png?alt=media&token=bd431e1e-a5c2-44ad-8df7-11c8fd0b9fcd'} alt="star icon" className={styles.starIcon}/>
                 <p className={styles.averageDescription}>{description}</p>
             </div>
         </div>

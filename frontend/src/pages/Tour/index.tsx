@@ -1,6 +1,5 @@
 import Header from '../../components/Header'
 import HelloLogout from '../../components/HelloLogout'
-import mainImg from '../../assets/mainImage.png'
 import Details from '../../components/Details'
 import styles from './style.module.css'
 import ReviewCard from '../../components/ReviewCard'
@@ -70,7 +69,7 @@ function TourDetails() {
         <div className={styles.mainSections}>
           <section className={styles.mainSection}>
             <section className={styles.detailsSection}>
-              <TourImage image={mainImg} className={styles.mainImage} tourName={tour?.name}></TourImage>
+              <TourImage image={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/mainImage.png?alt=media&token=9a7e6336-1b15-412b-91c1-c4acadcf03bf'} className={styles.mainImage} tourName={tour?.name}></TourImage>
               <Details city={tour.city} destination={tour.Destination} tour={tour.name} costPerPerson={tour.costPerPerson} duration={tour.duration} maxPeople={25} minAge={5} category={tour.Category} reviewCount={tour.Reviews?.length || 0} grade={Math.ceil(tour.averageGrade)}></Details>
               <h2 className={styles.title}>Overview</h2>
               <p className={styles.detailsText}>Istanbul, the vibrant and historic city straddling the continents of Europe and Asia, offers an enchanting blend of cultures, sights, and experiences that captivate every traveler's heart. As Turkey's cultural and economic hub, Istanbul seamlessly fuses its rich heritage with modernity, creating an unforgettable journey for visitors.</p>
@@ -78,9 +77,11 @@ function TourDetails() {
             </section>
             <section>
               <h2 className={styles.title} id={'mapAddress'}>Map</h2>
+              {/*
               <APIProvider apiKey={"AIzaSyBWA5xuEmbqnw-_DHBhrSSW_6OGXLWYOJw"}>
                 {tour.Destination && <MapComponent city={tour.city} country={tour.Destination?.name}></MapComponent>}  
               </APIProvider>
+              */}
             </section>
             <section className={styles.averageReviews}>
               <h2 className={styles.title}>Average Reviews</h2>

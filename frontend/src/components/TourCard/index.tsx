@@ -1,7 +1,5 @@
 import Grade from '../Grade'
 import styles from './style.module.css'
-import Heart from '../../assets/heart.png'
-import Clock from '../../assets/clock.png'
 import { Destination } from '../../interfaces/Destination'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +26,7 @@ function TourCard({ image, tour, grade, reviews, duration, cost, city, destinati
     <div className={styles.cardContainer} onClick={handleNavigate}>
         <div className={styles.imageContainer}>
           <div className={styles.heartContainer}>
-            <img src={Heart} alt="heart icon" className={styles.heartIcon}/>
+            <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/heart.png?alt=media&token=4d7e8a18-e411-44e7-b129-f36395b5a5fb'} alt="heart icon" className={styles.heartIcon}/>
           </div>
           <img src={image} alt={`image from ${tour}`} className={styles.image}/>
         </div>
@@ -41,7 +39,7 @@ function TourCard({ image, tour, grade, reviews, duration, cost, city, destinati
                   <p>{reviews} reviews</p>
                 </div>
                 <div className={styles.durationContainer}>
-                  <img src={Clock} alt="clock icon" className={styles.clockIcon}/>
+                  <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/clock.png?alt=media&token=7f6c4216-1035-49fa-a0a7-10d63ff55e1a'} alt="clock icon" className={styles.clockIcon}/>
                   <p>{duration}days</p>
                 </div>
             </div>

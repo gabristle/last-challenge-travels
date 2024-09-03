@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { Tour } from '../../interfaces/Tour'
 import tourService from '../../services/tour/tourService'
 import TourCard from '../TourCard'
-import cologne from '../../assets/cologne.png'
 import styles from './styles.module.css'
 
 function PopularToursCaroussel() {
@@ -46,7 +45,7 @@ function PopularToursCaroussel() {
                 {tours?.map((tour: Tour, index) => {
                     return (
                         <li key={index} className='splide__slide'>
-                            <TourCard id={tour.id} image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
+                            <TourCard id={tour.id} image={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/cologne.png?alt=media&token=1d870e93-15de-4cce-a476-d513693572e6'} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
                         </li>
                     )
                 })}

@@ -1,6 +1,5 @@
 import Header from '../../components/Header'
 import HelloLogout from '../../components/HelloLogout'
-import imgHeader from '../../assets/imgHeader.png'
 import SearchCard from '../../components/SearchCard'
 import styles from './style.module.css'
 import FilterCard from '../../components/FilterCard'
@@ -11,7 +10,6 @@ import { useEffect, useState } from 'react'
 import tourService from '../../services/tour/tourService'
 import { Tour } from '../../interfaces/Tour'
 import TourCard from '../../components/TourCard'
-import cologne from '../../assets/cologne.png'
 import PaginationButton from '../../components/PaginationButton'
 
 function Tours() {
@@ -47,7 +45,7 @@ function Tours() {
       </Header>
       <main>
         <section className={styles.mainSection}>
-          <img src={imgHeader} alt="cathedral of cologne" className={styles.imgHeader}/>
+          <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/imgHeader.png?alt=media&token=8cbd6124-d6d0-4c70-8fbc-55f2c15af5fe'} alt="cathedral of cologne" className={styles.imgHeader}/>
           <div className={styles.titleSection}>
             <h1 className={styles.mainTitle}>Tour Package</h1>
             <p><a href={'/'}>Home</a> / <a href={'/tours'} className={styles.tourLink}>Tour Package</a></p>
@@ -125,7 +123,7 @@ function Tours() {
               {tours?.map((tour: Tour, index: number) => {
                 return ( 
                   <div key={index}>    
-                    <TourCard id={tour.id} image={cologne} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
+                    <TourCard id={tour.id} image={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/cologne.png?alt=media&token=1d870e93-15de-4cce-a476-d513693572e6'} city={tour.city} destination={tour.Destination} tour={tour.name} grade={tour.averageGrade} reviews={tour.reviewCount} duration={tour.duration} cost={tour.costPerPerson}></TourCard>
                   </div>    
                 )
               })}
