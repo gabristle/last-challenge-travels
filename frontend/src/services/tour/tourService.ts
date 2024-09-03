@@ -27,10 +27,52 @@ const tourById = async (id: number) => {
     }
 }
 
+const filtredTours = async (params: {
+    name?: string
+    categoriesId?: number[]
+    maxCost?: number
+    destinationsId?: number[]
+    grades?: number[]
+}) => {
+    try {
+        const queryParams = new URLSearchParams()
+        if(params.name){
+            queryParams.append('name', params.name)
+        }
+
+        if(params.categoriesId) {
+            params.categoriesId.map((id) => {
+                queryParams.append('categoriesId', id.toString())
+            })
+        }
+
+        if(params.maxCost){
+            queryParams.append('maxCost', params.maxCost.toString())
+        }
+
+        if(params.destinationsId){
+            params.destinationsId.map((id) => {
+                queryParams.append('destinationsId', id.toString())
+            })
+        }
+
+        if(params.grades){
+            params.grades.map((grade) => {
+                queryParams.append('grades', grade.toString())
+            })
+        }
+        const response = await api.get(`/tour/?${queryParams.toString()}`)
+        return response.data                                                                                                                       
+    }catch(error){
+        console.error(error)
+    }
+}
+
 const tourService = {
     popularTours,
     allTours,
-    tourById
+    tourById,
+    filtredTours
 }
 
 export default tourService
