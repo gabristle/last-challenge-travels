@@ -94,6 +94,12 @@ export const tourController = {
         try{
             const { name, categoriesId, maxCost, destinationsId, grades, sort } = req.query as SearchParams
 
+            let sortBy = 'name'
+
+            if(sort === 'cost') {
+                sortBy = 'costPerPerson'
+            }
+
             const filters: WhereOptions[] = []
 
             if(name){
@@ -101,7 +107,8 @@ export const tourController = {
             }
 
             if(categoriesId && categoriesId.length > 0) {
-                filters.push({ categoryId: { [Op.in]: categoriesId } });
+                const categories = categoriesId.split(',').map((category: string) => parseInt(category, 10))
+                filters.push({ categoryId: { [Op.in]: categories } });
             }
 
             if(maxCost) {
@@ -109,11 +116,13 @@ export const tourController = {
             }
 
             if(destinationsId && destinationsId.length > 0) {
-                filters.push({destinationId: {[Op.like]: destinationsId}})
+                const destinations = destinationsId.split(',').map((destination: string) => parseInt(destination, 10))
+                filters.push({destinationId: {[Op.in]: destinations }})
             }
 
             if(grades) {
-                filters.push({averageGrade: {[Op.between]: [Number(grades), Number(grades)+0.9]}})
+                const allGrades = grades.split(',').map((grade: string) => parseInt(grade, 10))
+                filters.push({averageGrade: {[Op.in]: allGrades}})
             }
 
             if(name || maxCost || categoriesId || destinationsId || grades){
@@ -122,10 +131,11 @@ export const tourController = {
                 const result = await Tour.findAll({
                     where: whereFilters,
                     include: [Review, Category, Destination], 
+                    order: [sortBy]
                 })
                 return res.status(200).json(result) 
             }
-            const result = await Tour.findAll({ include: [Review, Category, Destination]})
+            const result = await Tour.findAll({ include: [Review, Category, Destination], order: [sortBy]})
             return res.status(200).json(result)
         }catch(error) {
             return res.status(400).json({ message: error})

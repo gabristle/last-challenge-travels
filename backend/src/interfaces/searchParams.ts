@@ -1,8 +1,8 @@
 export interface SearchParams {
     name?: string
-    categoriesId?: number[] | null
+    categoriesId?: string | null
     maxCost?: number
-    destinationsId?: number[] | null
-    grades?: number[] | null
-    sort?: 'Title' | 'Cost'
+    destinationsId?: string | null
+    grades?: string | null
+    sort?: 'title' | 'cost'
 }
