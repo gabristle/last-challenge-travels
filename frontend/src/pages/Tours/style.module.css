@@ -38,6 +38,29 @@
     bottom: -50px;
 }
 
+.nameInput {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0.7rem 0rem 0.7rem 1rem;
+    border: none;
+    width: 93%;
+    border-radius: 5px;
+    color: var(--blue);
+    border: 1px solid var(--gray);
+}
+
+.searchContainer {
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
 .mainContent {
     display: flex;
     width: 100%;
@@ -74,12 +97,17 @@
 
 .rangeContainer {
     display: flex;
+    gap: 1.5rem;
     flex-direction: column;
 }
 
 .rangeRow {
     display: flex;
     justify-content: space-between;
+}
+
+.rangeButton {
+    width: 40%;
 }
 
 .range[type=range] { 

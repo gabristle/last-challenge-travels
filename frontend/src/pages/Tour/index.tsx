@@ -27,6 +27,8 @@ function TourDetails() {
   const [averageGrades, setAverageGrades] = useState<Rating>()
   const navigate = useNavigate()
   const [seed, setSeed] = useState(1)
+  const [seedAverage, setSeedAverage] = useState(1)
+  const [seedDetails, setSeedDetails] = useState(1)
 
   function handleNavigate(){
     navigate('/tours')
@@ -46,14 +48,16 @@ function TourDetails() {
     }
 
     getTour(tourId)
-  }, [tourId])
+  }, [tourId, seed])
 
   const handleSubmit = async (newReview: Review) => {
     try{
       await reviewService.addReview(tourId, newReview)
       const data = await tourService.tourById(tourId)
       setTour(data)
-      setSeed(Math.random());
+      setSeed(Math.random())
+      setSeedAverage(Math.random())
+      setSeedDetails(Math.random())
     }catch(error){
       console.error(error)
     }
@@ -70,7 +74,7 @@ function TourDetails() {
           <section className={styles.mainSection}>
             <section className={styles.detailsSection}>
               <TourImage image={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/mainImage.png?alt=media&token=9a7e6336-1b15-412b-91c1-c4acadcf03bf'} className={styles.mainImage} tourName={tour?.name}></TourImage>
-              <Details city={tour.city} destination={tour.Destination} tour={tour.name} costPerPerson={tour.costPerPerson} duration={tour.duration} maxPeople={25} minAge={5} category={tour.Category} reviewCount={tour.Reviews?.length || 0} grade={Math.ceil(tour.averageGrade)}></Details>
+              <Details key={seedDetails} city={tour.city} destination={tour.Destination} tour={tour.name} costPerPerson={tour.costPerPerson} duration={tour.duration} maxPeople={25} minAge={5} category={tour.Category} reviewCount={tour.Reviews?.length || 0} grade={Math.ceil(tour.averageGrade)}></Details>
               <h2 className={styles.title}>Overview</h2>
               <p className={styles.detailsText}>Istanbul, the vibrant and historic city straddling the continents of Europe and Asia, offers an enchanting blend of cultures, sights, and experiences that captivate every traveler's heart. As Turkey's cultural and economic hub, Istanbul seamlessly fuses its rich heritage with modernity, creating an unforgettable journey for visitors.</p>
               <p className={styles.detailsText}>The City is home to some of the world's most iconic landmarks, including the awe-inspiring Hagia Sophia, the majestic Blue Mosque, and the grand Topkapi Palace, each bearing witness to Istanbul's illustrious past. Wandering through the bustling streets, you'll find an array of delightful bazaars, where you can haggle for unique souvenirs, immerse yourself in the aromatic spices, and savor traditional Turkish delights.</p>
@@ -85,7 +89,7 @@ function TourDetails() {
             </section>
             <section className={styles.averageReviews}>
               <h2 className={styles.title}>Average Reviews</h2>
-              {averageGrades && <AverageReviews rating={averageGrades} averageGrade={tour?.averageGrade}></AverageReviews>}
+              {averageGrades && <AverageReviews key={seedAverage} rating={averageGrades} averageGrade={tour?.averageGrade}></AverageReviews>}
             </section>
             <section className={styles.reviews}>
               <h3 className={styles.subtitle}>Showing {tour?.Reviews?.length} reviews</h3>

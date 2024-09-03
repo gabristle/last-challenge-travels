@@ -23,6 +23,7 @@ function AverageReviews({ rating, averageGrade }: AverageReviewsProps) {
         } else if (averageGrade <= 5) {
             setDescription('Excellent')
         }
+
     },[])
 
 

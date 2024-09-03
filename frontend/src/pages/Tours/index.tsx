@@ -145,9 +145,9 @@ function Tours() {
         <section className={styles.mainContent}>
           <aside className={styles.filters}>
             <FilterCard title='Search'>
-              <div>
-                <input type='text' onChange={(e) => setName(e.target.value)}></input>
-                <img src="" alt="" />
+              <div className={styles.searchContainer}>
+                <input type='text' onChange={(e) => setName(e.target.value)} className={styles.nameInput}></input>
+                <img src={'https://firebasestorage.googleapis.com/v0/b/trisog-e00b7.appspot.com/o/searchBlue.png?alt=media&token=e2b23858-0a5a-446f-864e-20dbfa122662'} alt="search icon" className={styles.searchIcon}/>
               </div>
             </FilterCard>
             <FilterCard title='Filter By'>
