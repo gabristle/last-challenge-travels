@@ -74,6 +74,7 @@
 .navigationContainer a {
     text-decoration: none;
     color: var(--blue);
+    transition: 300ms;
 }
 
 .navigationContainer a li:hover {

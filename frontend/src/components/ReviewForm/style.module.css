@@ -48,6 +48,7 @@
     border-radius: 6px;
     font-family: 'Inter', sans-serif;
     color: var(--blue);
+    transition: 300ms;
 }
 
 .formInputs input::placeholder,
@@ -64,4 +65,9 @@
     height: 55px;
     width: 25%;
     font-size: 1rem;
+}
+
+.formInputs textarea:hover,
+.formInputs input:hover{
+    background-color: var(--gray);
 }

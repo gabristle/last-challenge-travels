@@ -6,6 +6,7 @@ import Tour from '../pages/Tour'
 import Error from '../pages/Error'
 import PrivateRoutes from './PrivateRoutes'
 import PublicRoutes from './PublicRoutes'
+import Destinations from '../pages/Destinations'
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
         </Route>
         <Route path="/" element={<Home />}/>
         <Route path="*" element={<Error />}/>
+        <Route path="/destinations" element={<Destinations></Destinations>}/>
     </Routes>
   )
 }

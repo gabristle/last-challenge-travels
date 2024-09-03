@@ -5,6 +5,11 @@
     padding: 1.5rem 0rem 1.5rem 1rem;
     border: 1px solid var(--gray);
     width: calc(172px - 1.5rem);
+    transition: 300ms;
+}
+
+.typeContainer:hover {
+    transform: scale(1.025);
 }
 
 .typeContainer img {

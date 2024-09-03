@@ -39,7 +39,7 @@ function Header({ children }:HeaderProps) {
                         <a href={'/tours'}>
                             <li>Tours</li>
                         </a>
-                        <a href={'/error'}>
+                        <a href={'/destinations'}>
                             <li>Destination</li>
                         </a>
                         <a href={'/error'}>

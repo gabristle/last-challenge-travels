@@ -76,6 +76,7 @@
 
 .linksSection a:hover {
     color: var(--pink);
+    transition: 300ms;
 }
 
 .linksDestination {

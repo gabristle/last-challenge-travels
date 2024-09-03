@@ -22,9 +22,14 @@
     justify-content: space-between;
 }
 
+.costPerPerson {
+    color: var(--pink);
+}
+
 .icon {
     width: 20px;
     height: 22px;
+    transition: 300ms;
 }
 
 .localization {

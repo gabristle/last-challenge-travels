@@ -3,9 +3,14 @@
     font-size: 26px;
     color: var(--dark-gray);
 }
+
+.star:hover {
+    color: var(--pink);
+}
   
 .star.selected {
     color: var(--pink);
+    transition: 300ms;
 }
 
 .criterion {

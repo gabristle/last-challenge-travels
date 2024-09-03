@@ -22,6 +22,10 @@
     text-transform: capitalize;
 }
 
+.input:hover {
+    background-color: rgb(247, 247, 247);
+}
+
 .inputIcon {
     height: 18px;
     width: 18px;

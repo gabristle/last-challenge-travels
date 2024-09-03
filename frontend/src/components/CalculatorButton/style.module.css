@@ -12,6 +12,7 @@
     font-weight: 600;
     font-family: 'Work Sans', sans-serif;
     cursor: pointer;
+    transition: 300ms;
 }
 
 .button:hover {
