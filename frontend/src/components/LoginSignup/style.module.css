@@ -8,6 +8,7 @@
     border-radius: 6px;
     padding: 0px 3px;
     cursor: pointer;
+    transition: 300ms;
 }
 
 .container:hover {

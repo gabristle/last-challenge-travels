@@ -36,7 +36,7 @@ function Details({ city, destination, tour, costPerPerson, duration, maxPeople, 
         <div className={styles.details}>
             <div className={styles.detailContainer}>
                 <p>From</p>
-                <p className={styles.style}>${costPerPerson}</p>
+                <p className={styles.costPerPerson}>${costPerPerson}</p>
             </div>
             <div className={styles.detailContainer}>
                 <p>Duration</p>

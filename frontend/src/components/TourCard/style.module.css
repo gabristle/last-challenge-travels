@@ -2,7 +2,7 @@
     width: 270px;
     background-color: var(--ligth-gray);
     cursor: pointer;
-    transition: 100ms;
+    transition: 300ms;
 }
 
 .cardContainer:hover{

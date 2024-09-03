@@ -5,6 +5,11 @@
     height: 138px;
     width: 440px;
     gap: 1.2rem;
+    transition: 300ms;
+}
+
+.postContainer:hover{
+    transform: scale(1.025);
 }
 
 .postContainer img {

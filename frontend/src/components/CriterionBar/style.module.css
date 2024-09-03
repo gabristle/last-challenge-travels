@@ -16,6 +16,7 @@
     height: 10px;
     background-color: var(--pink);
     border-radius: 15px;
+    transition: 300ms;
 }
 
 .criterion,

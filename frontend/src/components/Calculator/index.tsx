@@ -19,9 +19,9 @@ function Calculator({ cost, duration }: CalculatorProps) {
 
     useEffect(() => {
         if(adults >= children-1){
-            setTotalCost(cost * (adults+(kids/2)))
+            setTotalCost(duration*(cost * (adults+(kids/2))))
         }else{
-            setTotalCost(cost * (adults+(kids/2)+(children/2)))
+            setTotalCost(duration*(cost * (adults+(kids/2)+(children/2))))
         }
         if(adults == 0) {
             setChildren(0)
@@ -85,7 +85,7 @@ function Calculator({ cost, duration }: CalculatorProps) {
                 <label htmlFor='time' className={styles.label}>Time</label>
                 <select name='time' id='time' className={styles.select}>
                     <option value="0" className={styles.selectOption}>Select</option>
-                    
+                    <option value={duration}>{duration} days</option>
                 </select>
             </div>
         </div>
