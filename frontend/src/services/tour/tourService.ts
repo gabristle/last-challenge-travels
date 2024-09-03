@@ -41,7 +41,7 @@ const filtredTours = async (params: {
         }
 
         if(params.categoriesId) {
-            params.categoriesId.map((id) => {
+            params.categoriesId.forEach((id) => {
                 queryParams.append('categoriesId', id.toString())
             })
         }
@@ -51,17 +51,17 @@ const filtredTours = async (params: {
         }
 
         if(params.destinationsId){
-            params.destinationsId.map((id) => {
+            params.destinationsId.forEach((id) => {
                 queryParams.append('destinationsId', id.toString())
             })
         }
 
         if(params.grades){
-            params.grades.map((grade) => {
+            params.grades.forEach((grade) => {
                 queryParams.append('grades', grade.toString())
             })
         }
-        const response = await api.get(`/tour/?${queryParams.toString()}`)
+        const response = await api.get(`/tour/search?${queryParams.toString()}`)
         return response.data                                                                                                                       
     }catch(error){
         console.error(error)

@@ -90,9 +90,9 @@ export const tourController = {
         }
     },
 
-    async findTours(req: Request, res: Response) {
+    async findTours(req: Request, res: Response): Promise<Response> {
         try{
-            const { name, categoriesId, maxCost, destinationsId, grades} = req.query as SearchParams
+            const { name, categoriesId, maxCost, destinationsId, grades, sort } = req.query as SearchParams
 
             const filters: WhereOptions[] = []
 
@@ -116,19 +116,19 @@ export const tourController = {
                 filters.push({averageGrade: {[Op.between]: [Number(grades), Number(grades)+0.9]}})
             }
 
-            const whereFilters = filters.length > 0 ? { [Op.and]: filters } : {}
+            if(name || maxCost || categoriesId || destinationsId || grades){
+                const whereFilters = filters.length > 0 ? { [Op.and]: filters } : {}
 
-            if(name && typeof name === 'string') {
                 const result = await Tour.findAll({
                     where: whereFilters,
-                    include: [Review, Category, Destination]
+                    include: [Review, Category, Destination], 
                 })
-                res.status(200).json(result)
-                
+                return res.status(200).json(result) 
             }
-    
+            const result = await Tour.findAll({ include: [Review, Category, Destination]})
+            return res.status(200).json(result)
         }catch(error) {
-            res.status(400).json({ message: error})
+            return res.status(400).json({ message: error})
         }
     },
 
