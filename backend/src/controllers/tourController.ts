@@ -3,7 +3,8 @@ import Destination from '../models/Destination'
 import Review from '../models/Review'
 import Tour from '../models/Tour'
 import { Request, Response } from 'express'
-import sequelize from 'sequelize'
+import { Op, WhereOptions } from 'sequelize'
+import { SearchParams } from '../interfaces/searchParams'
 
 export const tourController = {
     async list(req: Request, res: Response): Promise<void> {
@@ -91,10 +92,36 @@ export const tourController = {
 
     async findTours(req: Request, res: Response) {
         try{
-            const { search } = req.query
-            if(search && typeof search === 'string') {
+            const { name, categoriesId, maxCost, destinationsId, grades} = req.query as SearchParams
+
+            const filters: WhereOptions[] = []
+
+            if(name){
+                filters.push({name: {[Op.like]: `%${name}%`}})
+            }
+
+            if(categoriesId && categoriesId.length > 0) {
+                filters.push({ categoryId: { [Op.in]: categoriesId } });
+            }
+
+            if(maxCost) {
+                filters.push({costPerPerson: {[Op.lte]: maxCost}})
+            }
+
+            if(destinationsId && destinationsId.length > 0) {
+                filters.push({destinationId: {[Op.like]: destinationsId}})
+            }
+
+            if(grades) {
+                filters.push({averageGrade: {[Op.between]: [Number(grades), Number(grades)+0.9]}})
+            }
+
+            const whereFilters = filters.length > 0 ? { [Op.and]: filters } : {}
+
+            if(name && typeof name === 'string') {
                 const result = await Tour.findAll({
-                    where: sequelize.where(sequelize.fn('LOWER', sequelize.col('name')), 'LIKE', `%${search.toLowerCase()}%`)
+                    where: whereFilters,
+                    include: [Review, Category, Destination]
                 })
                 res.status(200).json(result)
                 
